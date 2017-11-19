@@ -79,7 +79,7 @@ export function parse(html) {
                 node.raw = html.slice(range[0], range[1]);
             }
             // map `url` to Link node
-            if (node.type === "Link" && node.properties.href !== "undefined") {
+            if (node.type === "Link" && typeof node.properties.href !== "undefined") {
                 node.url = node.properties.href;
             }
         }
