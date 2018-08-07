@@ -99,5 +99,29 @@ describe("HTMLProcessor-test", function () {
                 return Promise.all(promises);
             });
         });
+        context("when extensions option is specified", function () {
+            beforeEach(function () {
+                textlint = new TextLintCore();
+                textlint.setupPlugins(
+                    { html: HTMLPlugin },
+                    { html: {extensions: [".custom"]}}
+                );
+                textlint.setupRules({
+                    "no-todo": require("textlint-rule-no-todo")
+                });
+            });
+            it("should report error", function () {
+                const fixturePathList = [
+                    path.join(__dirname, "/fixtures/test.custom")
+                ];
+                const promises = fixturePathList.map((filePath) => {
+                    return textlint.lintFile(filePath).then(results => {
+                        assert(results.messages.length > 0);
+                        assert(results.filePath === filePath);
+                    });
+                });
+                return Promise.all(promises);
+            });
+        });
     });
 });
