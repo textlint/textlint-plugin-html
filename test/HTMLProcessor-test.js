@@ -1,7 +1,7 @@
 // LICENSE : MIT
 "use strict";
 import assert from "power-assert";
-import HTMLProcessor from "../src/HTMLProcessor";
+import HTMLPlugin from "../src/index"
 import {parse} from "../src/html-to-ast";
 import {tagNameToType} from "../src/mapping";
 import {TextLintCore} from "textlint";
@@ -60,8 +60,8 @@ describe("HTMLProcessor-test", function () {
         context("when target file is a HTML", function () {
             beforeEach(function () {
                 textlint = new TextLintCore();
-                textlint.setupProcessors({
-                    HTMLProcessor: HTMLProcessor
+                textlint.setupPlugins({
+                    html: HTMLPlugin
                 });
                 textlint.setupRules({
                     "no-todo": require("textlint-rule-no-todo")
@@ -78,8 +78,8 @@ describe("HTMLProcessor-test", function () {
         context("support file extensions", function () {
             beforeEach(function () {
                 textlint = new TextLintCore();
-                textlint.setupProcessors({
-                    HTMLProcessor: HTMLProcessor
+                textlint.setupPlugins({
+                    html: HTMLPlugin
                 });
                 textlint.setupRules({
                     "no-todo": require("textlint-rule-no-todo")
