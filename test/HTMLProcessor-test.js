@@ -1,7 +1,7 @@
 // LICENSE : MIT
 "use strict";
 import assert from "power-assert";
-import HTMLProcessor from "../src/HTMLProcessor";
+import HTMLPlugin from "../src/index"
 import {parse} from "../src/html-to-ast";
 import {tagNameToType} from "../src/mapping";
 import {TextLintCore} from "textlint";
@@ -60,8 +60,8 @@ describe("HTMLProcessor-test", function () {
         context("when target file is a HTML", function () {
             beforeEach(function () {
                 textlint = new TextLintCore();
-                textlint.setupProcessors({
-                    HTMLProcessor: HTMLProcessor
+                textlint.setupPlugins({
+                    html: HTMLPlugin
                 });
                 textlint.setupRules({
                     "no-todo": require("textlint-rule-no-todo")
@@ -78,8 +78,8 @@ describe("HTMLProcessor-test", function () {
         context("support file extensions", function () {
             beforeEach(function () {
                 textlint = new TextLintCore();
-                textlint.setupProcessors({
-                    HTMLProcessor: HTMLProcessor
+                textlint.setupPlugins({
+                    html: HTMLPlugin
                 });
                 textlint.setupRules({
                     "no-todo": require("textlint-rule-no-todo")
@@ -89,6 +89,30 @@ describe("HTMLProcessor-test", function () {
                 const fixturePathList = [
                     path.join(__dirname, "/fixtures/test.html"),
                     path.join(__dirname, "/fixtures/test.htm")
+                ];
+                const promises = fixturePathList.map((filePath) => {
+                    return textlint.lintFile(filePath).then(results => {
+                        assert(results.messages.length > 0);
+                        assert(results.filePath === filePath);
+                    });
+                });
+                return Promise.all(promises);
+            });
+        });
+        context("when extensions option is specified", function () {
+            beforeEach(function () {
+                textlint = new TextLintCore();
+                textlint.setupPlugins(
+                    { html: HTMLPlugin },
+                    { html: {extensions: [".custom"]}}
+                );
+                textlint.setupRules({
+                    "no-todo": require("textlint-rule-no-todo")
+                });
+            });
+            it("should report error", function () {
+                const fixturePathList = [
+                    path.join(__dirname, "/fixtures/test.custom")
                 ];
                 const promises = fixturePathList.map((filePath) => {
                     return textlint.lintFile(filePath).then(results => {

@@ -9,7 +9,7 @@ What is textlint plugin? Please see https://github.com/textlint/textlint/blob/ma
 
     npm install textlint-plugin-html
 
-## Supported extensions
+## Default supported extensions
 
 - `.html`
 - `.htm`
@@ -30,6 +30,22 @@ Lint HTML file with textlint
 
 ```
 $ textlint index.html
+```
+
+### Options
+ - `extensions`: `string[]`
+    - Additional file extensions for html
+
+For example, if you want to treat `.custom-ext` as html, put following config to `.textlintrc`
+
+ ```json
+{
+    "plugins": {
+        "html": {
+            "extensions": [".custom-ext"]
+        }
+    }
+}
 ```
 
 ## Tests

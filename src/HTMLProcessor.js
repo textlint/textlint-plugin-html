@@ -4,13 +4,14 @@ import {parse} from "./html-to-ast";
 export default class HTMLProcessor {
     constructor(config) {
         this.config = config;
+        this.extensions = this.config.extensions ? this.config.extensions : [];
     }
 
-    static availableExtensions() {
+    availableExtensions() {
         return [
             ".htm",
             ".html"
-        ];
+        ].concat(this.extensions);
     }
 
     processor(ext) {
