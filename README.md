@@ -1,4 +1,4 @@
-# textlint-plugin-html [![Build Status](https://travis-ci.org/textlint/textlint-plugin-html.svg?branch=master)](https://travis-ci.org/textlint/textlint-plugin-html)
+# textlint-plugin-html [![Actions Status: test](https://github.com/textlint/textlint-plugin-html/workflows/test/badge.svg)](https://github.com/textlint/textlint-plugin-html/actions?query=workflow%3A"test")
 
 Add HTML support for [textlint](https://github.com/textlint/textlint "textlint").
 
