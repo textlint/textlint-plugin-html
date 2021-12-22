@@ -228,7 +228,7 @@
                     "raw": ">\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "List",
                     "tagName": "ol",
                     "properties": {},
                     "children": [
@@ -252,7 +252,7 @@
                             "raw": "\n  "
                         },
                         {
-                            "type": "List",
+                            "type": "ListItem",
                             "tagName": "li",
                             "properties": {},
                             "children": [
@@ -293,7 +293,7 @@
                             "raw": "<li>delta\n  <li>"
                         },
                         {
-                            "type": "List",
+                            "type": "ListItem",
                             "tagName": "li",
                             "properties": {},
                             "children": [
