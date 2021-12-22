@@ -1,11 +1,12 @@
 // LICENSE : MIT
 "use strict";
-import assert from "power-assert";
+import assert from "assert";
 import HTMLPlugin from "../src/index"
 import {parse} from "../src/html-to-ast";
 import {tagNameToType} from "../src/mapping";
 import {TextLintCore} from "textlint";
 import path from "path";
+import { moduleInterop } from "@textlint/module-interop";
 describe("HTMLProcessor-test", function () {
     describe("#parse", function () {
         it("should return AST", function () {
@@ -64,7 +65,7 @@ describe("HTMLProcessor-test", function () {
                     html: HTMLPlugin
                 });
                 textlint.setupRules({
-                    "no-todo": require("textlint-rule-no-todo")
+                    "no-todo": moduleInterop(require("textlint-rule-no-todo"))
                 });
             });
             it("should report error", function () {
@@ -82,7 +83,7 @@ describe("HTMLProcessor-test", function () {
                     html: HTMLPlugin
                 });
                 textlint.setupRules({
-                    "no-todo": require("textlint-rule-no-todo")
+                    "no-todo": moduleInterop(require("textlint-rule-no-todo"))
                 });
             });
             it("support {.html, .htm}", function () {
@@ -107,7 +108,7 @@ describe("HTMLProcessor-test", function () {
                     { html: {extensions: [".custom"]}}
                 );
                 textlint.setupRules({
-                    "no-todo": require("textlint-rule-no-todo")
+                    "no-todo": moduleInterop(require("textlint-rule-no-todo"))
                 });
             });
             it("should report error", function () {
