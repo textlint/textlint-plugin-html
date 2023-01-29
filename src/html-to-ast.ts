@@ -27,8 +27,8 @@ import { unified } from 'unified'
 import rehypeParse from 'rehype-parse'
 import traverse, { TraverseContext } from "traverse";
 import { StructuredSource } from "structured-source";
+import type { Element, RootContent } from "hast";
 import { nodeTypes, tagNameToType } from "./mapping.js";
-import { Element, RootContent } from "hast";
 
 function mapNodeType(node: RootContent, parent: TraverseContext | undefined) {
     if (parent) {
