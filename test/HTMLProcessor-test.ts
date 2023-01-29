@@ -12,28 +12,15 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
-const getHeadNode = (ast) => {
+const getBodyNode = (ast: ReturnType<typeof parse>) => {
     const html = ast.children.find(node => {
+        // @ts-expect-error: html is custom type
         return node.type === "html";
     });
     if (!html) {
         throw new Error("Not found html node");
     }
-    const head = html.children.find(node => {
-        return node.type === "head";
-    });
-    if (!head) {
-        throw new Error("Not found head node");
-    }
-    return head
-}
-const getBodyNode = (ast) => {
-    const html = ast.children.find(node => {
-        return node.type === "html";
-    });
-    if (!html) {
-        throw new Error("Not found html node");
-    }
+    // @ts-expect-error: html is custom type
     const body = html.children.find(node => {
         return node.type === "body";
     });
@@ -49,11 +36,11 @@ describe("HTMLProcessor-test", function () {
             assert(result.type === "Document");
         });
         it("should map type to TxtNode's type", function () {
-            function createTag(tagName) {
+            function createTag(tagName: string) {
                 return `<${tagName}></${tagName}>`;
             }
-            
-            function testMap(typeMap) {
+
+            function testMap(typeMap: { [key: string]: string }) {
                 Object.keys(typeMap).forEach(tagName => {
                     const result = parse(`<!DOCTYPE html><html lang="en"><head><title>test</title></head><body>${createTag(tagName)}</body></html>`);
                     assert(result.type === "Document");
@@ -62,7 +49,7 @@ describe("HTMLProcessor-test", function () {
                     assert.strictEqual(firstChild.type, expectedType);
                 });
             }
-            
+
             testMap(tagNameToType);
         });
     });
@@ -76,6 +63,7 @@ describe("HTMLProcessor-test", function () {
                 };
                 const rule = {
                     ruleId: "no-todo",
+                    // @ts-ignore
                     rule: moduleInterop((await import("textlint-rule-no-todo")).default)
                 };
                 const options = {
@@ -102,6 +90,7 @@ describe("HTMLProcessor-test", function () {
                 };
                 const rule = {
                     ruleId: "no-todo",
+                    // @ts-ignore
                     rule: moduleInterop((await import("textlint-rule-no-todo")).default)
                 };
                 const options = {
@@ -137,6 +126,7 @@ describe("HTMLProcessor-test", function () {
                 };
                 const rule = {
                     ruleId: "no-todo",
+                    // @ts-ignore
                     rule: moduleInterop((await import("textlint-rule-no-todo")).default)
                 };
                 const options = {

@@ -1,11 +1,9 @@
 // LICENSE : MIT
-import { TextlintPluginProcessor } from "@textlint/types";
 import { parse } from "./html-to-ast.js";
-
 export type HTMLProcessorOptions = {
     extensions?: string[];
 }
-export default class HTMLProcessor implements TextlintPluginProcessor {
+export default class HTMLProcessor {
     config: HTMLProcessorOptions;
     extensions: string[];
 

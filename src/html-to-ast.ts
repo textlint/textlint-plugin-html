@@ -133,7 +133,6 @@ export function parse(html: string, options?: ParseOptions) {
                 node.url = node.properties.href;
             }
         }
-        // removeUnusedProperties(node);
     });
     return ast as any as TxtParentNode;
 }
