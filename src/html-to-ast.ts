@@ -30,21 +30,6 @@ import { StructuredSource } from "structured-source";
 import { nodeTypes, tagNameToType } from "./mapping.js";
 import { Element, RootContent } from "hast";
 
-/**
- * Remove undocumented properties on TxtNode from node
- */
-// function removeUnusedProperties(node: Element) {
-//     if (typeof node !== "object") {
-//         return;
-//     }
-//     ["position"].forEach(function (key) {
-//         if (node.hasOwnProperty(key)) {
-//             // @ts-expect-error: delete key
-//             delete node[key];
-//         }
-//     });
-// }
-
 function mapNodeType(node: RootContent, parent: TraverseContext | undefined) {
     if (parent) {
         const parentNode = parent.parent?.node;
