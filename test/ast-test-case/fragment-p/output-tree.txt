@@ -1,0 +1,7 @@
+Document(root)
+  html(element)
+    head(element)
+    body(element)
+      Paragraph(element)
+        Str(text)
+      Str(text)

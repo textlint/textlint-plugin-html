@@ -1,0 +1,6 @@
+Document(root)
+  Comment(comment)
+  html(element)
+    head(element)
+    body(element)
+      Str(text)

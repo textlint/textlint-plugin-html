@@ -1,0 +1,162 @@
+{
+    "type": "Document",
+    "children": [
+        {
+            "type": "Comment",
+            "value": " comment ",
+            "position": {
+                "start": {
+                    "line": 1,
+                    "column": 1,
+                    "offset": 0
+                },
+                "end": {
+                    "line": 1,
+                    "column": 17,
+                    "offset": 16
+                }
+            },
+            "loc": {
+                "start": {
+                    "line": 1,
+                    "column": 0
+                },
+                "end": {
+                    "line": 1,
+                    "column": 16
+                }
+            },
+            "range": [
+                0,
+                16
+            ],
+            "raw": "<!-- comment -->"
+        },
+        {
+            "type": "html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "head",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 3,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        22
+                    ],
+                    "raw": "<!-- comment -->\ntest\n"
+                },
+                {
+                    "type": "body",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": [
+                        {
+                            "type": "Str",
+                            "value": "test\n",
+                            "position": {
+                                "start": {
+                                    "line": 2,
+                                    "column": 1,
+                                    "offset": 17
+                                },
+                                "end": {
+                                    "line": 3,
+                                    "column": 1,
+                                    "offset": 22
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 2,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "line": 3,
+                                    "column": 0
+                                }
+                            },
+                            "range": [
+                                17,
+                                22
+                            ],
+                            "raw": "test\n"
+                        }
+                    ],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 3,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        22
+                    ],
+                    "raw": "<!-- comment -->\ntest\n"
+                }
+            ],
+            "loc": {
+                "start": {
+                    "line": 1,
+                    "column": 0
+                },
+                "end": {
+                    "line": 3,
+                    "column": 0
+                }
+            },
+            "range": [
+                0,
+                22
+            ],
+            "raw": "<!-- comment -->\ntest\n"
+        }
+    ],
+    "data": {
+        "quirksMode": true
+    },
+    "position": {
+        "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+        },
+        "end": {
+            "line": 3,
+            "column": 1,
+            "offset": 22
+        }
+    },
+    "loc": {
+        "start": {
+            "line": 1,
+            "column": 0
+        },
+        "end": {
+            "line": 3,
+            "column": 0
+        }
+    },
+    "range": [
+        0,
+        22
+    ],
+    "raw": "<!-- comment -->\ntest\n"
+}

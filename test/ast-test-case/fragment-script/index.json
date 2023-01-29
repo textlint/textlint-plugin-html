@@ -1,0 +1,196 @@
+{
+    "type": "Document",
+    "children": [
+        {
+            "type": "html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "head",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": [
+                        {
+                            "type": "style",
+                            "tagName": "style",
+                            "properties": {},
+                            "children": [
+                                {
+                                    "type": "CodeBlock",
+                                    "value": " hr {\n    border: 0\n}\n\nbody {\n    margin: 0\n} ",
+                                    "position": {
+                                        "start": {
+                                            "line": 1,
+                                            "column": 8,
+                                            "offset": 7
+                                        },
+                                        "end": {
+                                            "line": 7,
+                                            "column": 3,
+                                            "offset": 53
+                                        }
+                                    },
+                                    "loc": {
+                                        "start": {
+                                            "line": 1,
+                                            "column": 7
+                                        },
+                                        "end": {
+                                            "line": 7,
+                                            "column": 2
+                                        }
+                                    },
+                                    "range": [
+                                        7,
+                                        53
+                                    ],
+                                    "raw": " hr {\n    border: 0\n}\n\nbody {\n    margin: 0\n} "
+                                }
+                            ],
+                            "position": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 1,
+                                    "offset": 0
+                                },
+                                "end": {
+                                    "line": 7,
+                                    "column": 11,
+                                    "offset": 61
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "line": 7,
+                                    "column": 10
+                                }
+                            },
+                            "range": [
+                                0,
+                                61
+                            ],
+                            "raw": "<style> hr {\n    border: 0\n}\n\nbody {\n    margin: 0\n} </style>"
+                        },
+                        {
+                            "type": "Str",
+                            "value": "\n",
+                            "position": {
+                                "start": {
+                                    "line": 7,
+                                    "column": 11,
+                                    "offset": 61
+                                },
+                                "end": {
+                                    "line": 8,
+                                    "column": 1,
+                                    "offset": 62
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 7,
+                                    "column": 10
+                                },
+                                "end": {
+                                    "line": 8,
+                                    "column": 0
+                                }
+                            },
+                            "range": [
+                                61,
+                                62
+                            ],
+                            "raw": "\n"
+                        }
+                    ],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 8,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        62
+                    ],
+                    "raw": "<style> hr {\n    border: 0\n}\n\nbody {\n    margin: 0\n} </style>\n"
+                },
+                {
+                    "type": "body",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 8,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        62
+                    ],
+                    "raw": "<style> hr {\n    border: 0\n}\n\nbody {\n    margin: 0\n} </style>\n"
+                }
+            ],
+            "loc": {
+                "start": {
+                    "line": 1,
+                    "column": 0
+                },
+                "end": {
+                    "line": 8,
+                    "column": 0
+                }
+            },
+            "range": [
+                0,
+                62
+            ],
+            "raw": "<style> hr {\n    border: 0\n}\n\nbody {\n    margin: 0\n} </style>\n"
+        }
+    ],
+    "data": {
+        "quirksMode": true
+    },
+    "position": {
+        "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+        },
+        "end": {
+            "line": 8,
+            "column": 1,
+            "offset": 62
+        }
+    },
+    "loc": {
+        "start": {
+            "line": 1,
+            "column": 0
+        },
+        "end": {
+            "line": 8,
+            "column": 0
+        }
+    },
+    "range": [
+        0,
+        62
+    ],
+    "raw": "<style> hr {\n    border: 0\n}\n\nbody {\n    margin: 0\n} </style>\n"
+}

@@ -12,37 +12,42 @@ import { fileURLToPath } from "url";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
+const getHeadNode = (ast) => {
+    const html = ast.children.find(node => {
+        return node.type === "html";
+    });
+    if (!html) {
+        throw new Error("Not found html node");
+    }
+    const head = html.children.find(node => {
+        return node.type === "head";
+    });
+    if (!head) {
+        throw new Error("Not found head node");
+    }
+    return head
+}
+const getBodyNode = (ast) => {
+    const html = ast.children.find(node => {
+        return node.type === "html";
+    });
+    if (!html) {
+        throw new Error("Not found html node");
+    }
+    const body = html.children.find(node => {
+        return node.type === "body";
+    });
+    if (!body) {
+        throw new Error("Not found body node");
+    }
+    return body
+}
 describe("HTMLProcessor-test", function () {
     describe("#parse", function () {
         it("should return AST", function () {
             const result = parse(`<div><p><span>aaaa</span></p></div>`);
             assert(result.type === "Document");
         });
-        it("script should CodeBlock", function () {
-            const result = parse(`<script> const a = 1; </script>`);
-            const script = result.children[0];
-            script.children.forEach(code => {
-                assert.equal(code.type, "CodeBlock");
-            });
-        });
-        it("style should CodeBlock", function () {
-            const result = parse(`<style> hr{border:0}body{margin:0} </style>`);
-            const script = result.children[0];
-            script.children.forEach(code => {
-                assert.equal(code.type, "CodeBlock");
-            });
-        });
-        it("<p> should Paragraph", function () {
-            const result = parse(`<p>test</p>`);
-            const pTag = result.children[0];
-            assert.equal(pTag.type, "Paragraph");
-        });
-        it("<!-- comment --> should be Comment", function () {
-            const result = parse(`<!-- comment -->`);
-            const commentNode = result.children[0];
-            assert.equal(commentNode.type, "Comment");
-        });
-        
         it("should map type to TxtNode's type", function () {
             function createTag(tagName) {
                 return `<${tagName}></${tagName}>`;
@@ -50,11 +55,11 @@ describe("HTMLProcessor-test", function () {
             
             function testMap(typeMap) {
                 Object.keys(typeMap).forEach(tagName => {
-                    const result = parse(createTag(tagName));
+                    const result = parse(`<!DOCTYPE html><html lang="en"><head><title>test</title></head><body>${createTag(tagName)}</body></html>`);
                     assert(result.type === "Document");
-                    const firstChild = result.children[0];
+                    const firstChild = getBodyNode(result).children[0];
                     const expectedType = typeMap[tagName];
-                    assert.equal(firstChild.type, expectedType);
+                    assert.strictEqual(firstChild.type, expectedType);
                 });
             }
             

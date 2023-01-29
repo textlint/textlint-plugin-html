@@ -1,0 +1,196 @@
+{
+    "type": "Document",
+    "children": [
+        {
+            "type": "html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "head",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        12
+                    ],
+                    "raw": "<p>test</p>\n"
+                },
+                {
+                    "type": "body",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": [
+                        {
+                            "type": "Paragraph",
+                            "tagName": "p",
+                            "properties": {},
+                            "children": [
+                                {
+                                    "type": "Str",
+                                    "value": "test",
+                                    "position": {
+                                        "start": {
+                                            "line": 1,
+                                            "column": 4,
+                                            "offset": 3
+                                        },
+                                        "end": {
+                                            "line": 1,
+                                            "column": 8,
+                                            "offset": 7
+                                        }
+                                    },
+                                    "loc": {
+                                        "start": {
+                                            "line": 1,
+                                            "column": 3
+                                        },
+                                        "end": {
+                                            "line": 1,
+                                            "column": 7
+                                        }
+                                    },
+                                    "range": [
+                                        3,
+                                        7
+                                    ],
+                                    "raw": "test"
+                                }
+                            ],
+                            "position": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 1,
+                                    "offset": 0
+                                },
+                                "end": {
+                                    "line": 1,
+                                    "column": 12,
+                                    "offset": 11
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "line": 1,
+                                    "column": 11
+                                }
+                            },
+                            "range": [
+                                0,
+                                11
+                            ],
+                            "raw": "<p>test</p>"
+                        },
+                        {
+                            "type": "Str",
+                            "value": "\n",
+                            "position": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 12,
+                                    "offset": 11
+                                },
+                                "end": {
+                                    "line": 2,
+                                    "column": 1,
+                                    "offset": 12
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 11
+                                },
+                                "end": {
+                                    "line": 2,
+                                    "column": 0
+                                }
+                            },
+                            "range": [
+                                11,
+                                12
+                            ],
+                            "raw": "\n"
+                        }
+                    ],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        12
+                    ],
+                    "raw": "<p>test</p>\n"
+                }
+            ],
+            "loc": {
+                "start": {
+                    "line": 1,
+                    "column": 0
+                },
+                "end": {
+                    "line": 2,
+                    "column": 0
+                }
+            },
+            "range": [
+                0,
+                12
+            ],
+            "raw": "<p>test</p>\n"
+        }
+    ],
+    "data": {
+        "quirksMode": true
+    },
+    "position": {
+        "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+        },
+        "end": {
+            "line": 2,
+            "column": 1,
+            "offset": 12
+        }
+    },
+    "loc": {
+        "start": {
+            "line": 1,
+            "column": 0
+        },
+        "end": {
+            "line": 2,
+            "column": 0
+        }
+    },
+    "range": [
+        0,
+        12
+    ],
+    "raw": "<p>test</p>\n"
+}
