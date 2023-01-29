@@ -1,0 +1,196 @@
+{
+    "type": "Document",
+    "children": [
+        {
+            "type": "html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "head",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        30
+                    ],
+                    "raw": "<strong>Hello World.</strong>\n"
+                },
+                {
+                    "type": "body",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": [
+                        {
+                            "type": "Strong",
+                            "tagName": "strong",
+                            "properties": {},
+                            "children": [
+                                {
+                                    "type": "Str",
+                                    "value": "Hello World.",
+                                    "position": {
+                                        "start": {
+                                            "line": 1,
+                                            "column": 9,
+                                            "offset": 8
+                                        },
+                                        "end": {
+                                            "line": 1,
+                                            "column": 21,
+                                            "offset": 20
+                                        }
+                                    },
+                                    "loc": {
+                                        "start": {
+                                            "line": 1,
+                                            "column": 8
+                                        },
+                                        "end": {
+                                            "line": 1,
+                                            "column": 20
+                                        }
+                                    },
+                                    "range": [
+                                        8,
+                                        20
+                                    ],
+                                    "raw": "Hello World."
+                                }
+                            ],
+                            "position": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 1,
+                                    "offset": 0
+                                },
+                                "end": {
+                                    "line": 1,
+                                    "column": 30,
+                                    "offset": 29
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "line": 1,
+                                    "column": 29
+                                }
+                            },
+                            "range": [
+                                0,
+                                29
+                            ],
+                            "raw": "<strong>Hello World.</strong>"
+                        },
+                        {
+                            "type": "Str",
+                            "value": "\n",
+                            "position": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 30,
+                                    "offset": 29
+                                },
+                                "end": {
+                                    "line": 2,
+                                    "column": 1,
+                                    "offset": 30
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 29
+                                },
+                                "end": {
+                                    "line": 2,
+                                    "column": 0
+                                }
+                            },
+                            "range": [
+                                29,
+                                30
+                            ],
+                            "raw": "\n"
+                        }
+                    ],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        30
+                    ],
+                    "raw": "<strong>Hello World.</strong>\n"
+                }
+            ],
+            "loc": {
+                "start": {
+                    "line": 1,
+                    "column": 0
+                },
+                "end": {
+                    "line": 2,
+                    "column": 0
+                }
+            },
+            "range": [
+                0,
+                30
+            ],
+            "raw": "<strong>Hello World.</strong>\n"
+        }
+    ],
+    "data": {
+        "quirksMode": true
+    },
+    "position": {
+        "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+        },
+        "end": {
+            "line": 2,
+            "column": 1,
+            "offset": 30
+        }
+    },
+    "loc": {
+        "start": {
+            "line": 1,
+            "column": 0
+        },
+        "end": {
+            "line": 2,
+            "column": 0
+        }
+    },
+    "range": [
+        0,
+        30
+    ],
+    "raw": "<strong>Hello World.</strong>\n"
+}

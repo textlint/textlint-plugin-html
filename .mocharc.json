@@ -1,6 +1,8 @@
 {
-  "timeout": "5000",
-  "require": [
-    "@babel/register"
-  ]
+  "$schema": "https://json.schemastore.org/mocharc",
+  "loader": "ts-node/esm",
+  "spec": [
+    "test/**/*.{js,ts}"
+  ],
+  "timeout": 10000
 }

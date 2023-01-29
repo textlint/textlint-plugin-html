@@ -1,0 +1,331 @@
+{
+    "type": "Document",
+    "children": [
+        {
+            "type": "html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "head",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        17
+                    ],
+                    "raw": "<a><b><b><p></a>\n"
+                },
+                {
+                    "type": "body",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": [
+                        {
+                            "type": "Link",
+                            "tagName": "a",
+                            "properties": {},
+                            "children": [
+                                {
+                                    "type": "b",
+                                    "tagName": "b",
+                                    "properties": {},
+                                    "children": [
+                                        {
+                                            "type": "b",
+                                            "tagName": "b",
+                                            "properties": {},
+                                            "children": [],
+                                            "position": {
+                                                "start": {
+                                                    "line": 1,
+                                                    "column": 7,
+                                                    "offset": 6
+                                                },
+                                                "end": {
+                                                    "line": 1,
+                                                    "column": 10,
+                                                    "offset": 9
+                                                }
+                                            },
+                                            "loc": {
+                                                "start": {
+                                                    "line": 1,
+                                                    "column": 6
+                                                },
+                                                "end": {
+                                                    "line": 1,
+                                                    "column": 9
+                                                }
+                                            },
+                                            "range": [
+                                                6,
+                                                9
+                                            ],
+                                            "raw": "<b>"
+                                        }
+                                    ],
+                                    "position": {
+                                        "start": {
+                                            "line": 1,
+                                            "column": 4,
+                                            "offset": 3
+                                        },
+                                        "end": {
+                                            "line": 1,
+                                            "column": 10,
+                                            "offset": 9
+                                        }
+                                    },
+                                    "loc": {
+                                        "start": {
+                                            "line": 1,
+                                            "column": 3
+                                        },
+                                        "end": {
+                                            "line": 1,
+                                            "column": 9
+                                        }
+                                    },
+                                    "range": [
+                                        3,
+                                        9
+                                    ],
+                                    "raw": "<b><b>"
+                                }
+                            ],
+                            "position": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 1,
+                                    "offset": 0
+                                },
+                                "end": {
+                                    "line": 1,
+                                    "column": 10,
+                                    "offset": 9
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "line": 1,
+                                    "column": 9
+                                }
+                            },
+                            "range": [
+                                0,
+                                9
+                            ],
+                            "raw": "<a><b><b>"
+                        },
+                        {
+                            "type": "b",
+                            "tagName": "b",
+                            "properties": {},
+                            "children": [
+                                {
+                                    "type": "b",
+                                    "tagName": "b",
+                                    "properties": {},
+                                    "children": [
+                                        {
+                                            "type": "Paragraph",
+                                            "tagName": "p",
+                                            "properties": {},
+                                            "children": [
+                                                {
+                                                    "type": "Link",
+                                                    "tagName": "a",
+                                                    "properties": {},
+                                                    "children": [],
+                                                    "loc": {
+                                                        "start": {
+                                                            "line": 1,
+                                                            "column": 9
+                                                        },
+                                                        "end": {
+                                                            "line": 2,
+                                                            "column": 0
+                                                        }
+                                                    },
+                                                    "range": [
+                                                        9,
+                                                        17
+                                                    ],
+                                                    "raw": "<p></a>\n"
+                                                },
+                                                {
+                                                    "type": "Str",
+                                                    "value": "\n",
+                                                    "position": {
+                                                        "start": {
+                                                            "line": 1,
+                                                            "column": 17,
+                                                            "offset": 16
+                                                        },
+                                                        "end": {
+                                                            "line": 2,
+                                                            "column": 1,
+                                                            "offset": 17
+                                                        }
+                                                    },
+                                                    "loc": {
+                                                        "start": {
+                                                            "line": 1,
+                                                            "column": 16
+                                                        },
+                                                        "end": {
+                                                            "line": 2,
+                                                            "column": 0
+                                                        }
+                                                    },
+                                                    "range": [
+                                                        16,
+                                                        17
+                                                    ],
+                                                    "raw": "\n"
+                                                }
+                                            ],
+                                            "position": {
+                                                "start": {
+                                                    "line": 1,
+                                                    "column": 10,
+                                                    "offset": 9
+                                                },
+                                                "end": {
+                                                    "line": 2,
+                                                    "column": 1,
+                                                    "offset": 17
+                                                }
+                                            },
+                                            "loc": {
+                                                "start": {
+                                                    "line": 1,
+                                                    "column": 9
+                                                },
+                                                "end": {
+                                                    "line": 2,
+                                                    "column": 0
+                                                }
+                                            },
+                                            "range": [
+                                                9,
+                                                17
+                                            ],
+                                            "raw": "<p></a>\n"
+                                        }
+                                    ],
+                                    "loc": {
+                                        "start": {
+                                            "line": 1,
+                                            "column": 0
+                                        },
+                                        "end": {
+                                            "line": 2,
+                                            "column": 0
+                                        }
+                                    },
+                                    "range": [
+                                        0,
+                                        17
+                                    ],
+                                    "raw": "<a><b><b><p></a>\n"
+                                }
+                            ],
+                            "loc": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "line": 2,
+                                    "column": 0
+                                }
+                            },
+                            "range": [
+                                0,
+                                17
+                            ],
+                            "raw": "<a><b><b><p></a>\n"
+                        }
+                    ],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        17
+                    ],
+                    "raw": "<a><b><b><p></a>\n"
+                }
+            ],
+            "loc": {
+                "start": {
+                    "line": 1,
+                    "column": 0
+                },
+                "end": {
+                    "line": 2,
+                    "column": 0
+                }
+            },
+            "range": [
+                0,
+                17
+            ],
+            "raw": "<a><b><b><p></a>\n"
+        }
+    ],
+    "data": {
+        "quirksMode": true
+    },
+    "position": {
+        "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+        },
+        "end": {
+            "line": 2,
+            "column": 1,
+            "offset": 17
+        }
+    },
+    "loc": {
+        "start": {
+            "line": 1,
+            "column": 0
+        },
+        "end": {
+            "line": 2,
+            "column": 0
+        }
+    },
+    "range": [
+        0,
+        17
+    ],
+    "raw": "<a><b><b><p></a>\n"
+}

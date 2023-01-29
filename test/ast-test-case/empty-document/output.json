@@ -1,0 +1,27 @@
+{
+    "type": "Document",
+    "children": [
+        {
+            "type": "html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "head",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": []
+                },
+                {
+                    "type": "body",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": []
+                }
+            ]
+        }
+    ],
+    "data": {
+        "quirksMode": true
+    }
+}

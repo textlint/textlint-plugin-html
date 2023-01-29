@@ -1,0 +1,196 @@
+{
+    "type": "Document",
+    "children": [
+        {
+            "type": "html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "head",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": [
+                        {
+                            "type": "script",
+                            "tagName": "script",
+                            "properties": {},
+                            "children": [
+                                {
+                                    "type": "CodeBlock",
+                                    "value": " const a = 1; ",
+                                    "position": {
+                                        "start": {
+                                            "line": 1,
+                                            "column": 9,
+                                            "offset": 8
+                                        },
+                                        "end": {
+                                            "line": 1,
+                                            "column": 23,
+                                            "offset": 22
+                                        }
+                                    },
+                                    "loc": {
+                                        "start": {
+                                            "line": 1,
+                                            "column": 8
+                                        },
+                                        "end": {
+                                            "line": 1,
+                                            "column": 22
+                                        }
+                                    },
+                                    "range": [
+                                        8,
+                                        22
+                                    ],
+                                    "raw": " const a = 1; "
+                                }
+                            ],
+                            "position": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 1,
+                                    "offset": 0
+                                },
+                                "end": {
+                                    "line": 1,
+                                    "column": 32,
+                                    "offset": 31
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "line": 1,
+                                    "column": 31
+                                }
+                            },
+                            "range": [
+                                0,
+                                31
+                            ],
+                            "raw": "<script> const a = 1; </script>"
+                        },
+                        {
+                            "type": "Str",
+                            "value": "\n",
+                            "position": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 32,
+                                    "offset": 31
+                                },
+                                "end": {
+                                    "line": 2,
+                                    "column": 1,
+                                    "offset": 32
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 31
+                                },
+                                "end": {
+                                    "line": 2,
+                                    "column": 0
+                                }
+                            },
+                            "range": [
+                                31,
+                                32
+                            ],
+                            "raw": "\n"
+                        }
+                    ],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        32
+                    ],
+                    "raw": "<script> const a = 1; </script>\n"
+                },
+                {
+                    "type": "body",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        32
+                    ],
+                    "raw": "<script> const a = 1; </script>\n"
+                }
+            ],
+            "loc": {
+                "start": {
+                    "line": 1,
+                    "column": 0
+                },
+                "end": {
+                    "line": 2,
+                    "column": 0
+                }
+            },
+            "range": [
+                0,
+                32
+            ],
+            "raw": "<script> const a = 1; </script>\n"
+        }
+    ],
+    "data": {
+        "quirksMode": true
+    },
+    "position": {
+        "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+        },
+        "end": {
+            "line": 2,
+            "column": 1,
+            "offset": 32
+        }
+    },
+    "loc": {
+        "start": {
+            "line": 1,
+            "column": 0
+        },
+        "end": {
+            "line": 2,
+            "column": 0
+        }
+    },
+    "range": [
+        0,
+        32
+    ],
+    "raw": "<script> const a = 1; </script>\n"
+}

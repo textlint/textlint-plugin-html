@@ -1,0 +1,7 @@
+Document(root)
+  html(element)
+    head(element)
+    body(element)
+      Strong(element)
+        Str(text)
+      Str(text)

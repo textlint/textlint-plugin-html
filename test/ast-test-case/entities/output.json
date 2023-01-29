@@ -1,0 +1,131 @@
+{
+    "type": "Document",
+    "children": [
+        {
+            "type": "html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "head",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 3,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        67
+                    ],
+                    "raw": "&copy &amp; baz. AT&T.\nalpha &lt; bravo &apos; charlie &gt; delta.\n"
+                },
+                {
+                    "type": "body",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": [
+                        {
+                            "type": "Str",
+                            "value": "© & baz. AT&T.\nalpha < bravo ' charlie > delta.\n",
+                            "position": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 1,
+                                    "offset": 0
+                                },
+                                "end": {
+                                    "line": 3,
+                                    "column": 1,
+                                    "offset": 67
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "line": 3,
+                                    "column": 0
+                                }
+                            },
+                            "range": [
+                                0,
+                                67
+                            ],
+                            "raw": "&copy &amp; baz. AT&T.\nalpha &lt; bravo &apos; charlie &gt; delta.\n"
+                        }
+                    ],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 3,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        67
+                    ],
+                    "raw": "&copy &amp; baz. AT&T.\nalpha &lt; bravo &apos; charlie &gt; delta.\n"
+                }
+            ],
+            "loc": {
+                "start": {
+                    "line": 1,
+                    "column": 0
+                },
+                "end": {
+                    "line": 3,
+                    "column": 0
+                }
+            },
+            "range": [
+                0,
+                67
+            ],
+            "raw": "&copy &amp; baz. AT&T.\nalpha &lt; bravo &apos; charlie &gt; delta.\n"
+        }
+    ],
+    "data": {
+        "quirksMode": true
+    },
+    "position": {
+        "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+        },
+        "end": {
+            "line": 3,
+            "column": 1,
+            "offset": 67
+        }
+    },
+    "loc": {
+        "start": {
+            "line": 1,
+            "column": 0
+        },
+        "end": {
+            "line": 3,
+            "column": 0
+        }
+    },
+    "range": [
+        0,
+        67
+    ],
+    "raw": "&copy &amp; baz. AT&T.\nalpha &lt; bravo &apos; charlie &gt; delta.\n"
+}

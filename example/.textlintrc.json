@@ -1,0 +1,11 @@
+{
+  "plugins": [
+    "html"
+  ],
+  "filters": {},
+  "rules": {
+    "preset-ja-technical-writing": {
+      "ja-no-mixed-period": false
+    }
+  }
+}

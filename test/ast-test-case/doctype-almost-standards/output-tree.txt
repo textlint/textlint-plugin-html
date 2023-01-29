@@ -1,0 +1,5 @@
+Document(root)
+  doctype(doctype)
+  html(element)
+    head(element)
+    body(element)

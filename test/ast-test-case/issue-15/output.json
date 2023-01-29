@@ -1,0 +1,623 @@
+{
+    "type": "Document",
+    "children": [
+        {
+            "type": "html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "head",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": [
+                        {
+                            "type": "title",
+                            "tagName": "title",
+                            "properties": {},
+                            "children": [
+                                {
+                                    "type": "Str",
+                                    "value": "テスト",
+                                    "position": {
+                                        "start": {
+                                            "line": 2,
+                                            "column": 14,
+                                            "offset": 20
+                                        },
+                                        "end": {
+                                            "line": 2,
+                                            "column": 17,
+                                            "offset": 23
+                                        }
+                                    },
+                                    "loc": {
+                                        "start": {
+                                            "line": 2,
+                                            "column": 13
+                                        },
+                                        "end": {
+                                            "line": 2,
+                                            "column": 16
+                                        }
+                                    },
+                                    "range": [
+                                        20,
+                                        23
+                                    ],
+                                    "raw": "テスト"
+                                }
+                            ],
+                            "position": {
+                                "start": {
+                                    "line": 2,
+                                    "column": 7,
+                                    "offset": 13
+                                },
+                                "end": {
+                                    "line": 2,
+                                    "column": 25,
+                                    "offset": 31
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 2,
+                                    "column": 6
+                                },
+                                "end": {
+                                    "line": 2,
+                                    "column": 24
+                                }
+                            },
+                            "range": [
+                                13,
+                                31
+                            ],
+                            "raw": "<title>テスト</title>"
+                        }
+                    ],
+                    "position": {
+                        "start": {
+                            "line": 2,
+                            "column": 1,
+                            "offset": 7
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 32,
+                            "offset": 38
+                        }
+                    },
+                    "loc": {
+                        "start": {
+                            "line": 2,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 31
+                        }
+                    },
+                    "range": [
+                        7,
+                        38
+                    ],
+                    "raw": "<head><title>テスト</title></head>"
+                },
+                {
+                    "type": "Str",
+                    "value": "\n",
+                    "position": {
+                        "start": {
+                            "line": 2,
+                            "column": 32,
+                            "offset": 38
+                        },
+                        "end": {
+                            "line": 3,
+                            "column": 1,
+                            "offset": 39
+                        }
+                    },
+                    "loc": {
+                        "start": {
+                            "line": 2,
+                            "column": 31
+                        },
+                        "end": {
+                            "line": 3,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        38,
+                        39
+                    ],
+                    "raw": "\n"
+                },
+                {
+                    "type": "body",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": [
+                        {
+                            "type": "Str",
+                            "value": "\n",
+                            "position": {
+                                "start": {
+                                    "line": 3,
+                                    "column": 7,
+                                    "offset": 45
+                                },
+                                "end": {
+                                    "line": 4,
+                                    "column": 1,
+                                    "offset": 46
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 3,
+                                    "column": 6
+                                },
+                                "end": {
+                                    "line": 4,
+                                    "column": 0
+                                }
+                            },
+                            "range": [
+                                45,
+                                46
+                            ],
+                            "raw": "\n"
+                        },
+                        {
+                            "type": "Paragraph",
+                            "tagName": "p",
+                            "properties": {},
+                            "children": [
+                                {
+                                    "type": "span",
+                                    "tagName": "span",
+                                    "properties": {},
+                                    "children": [
+                                        {
+                                            "type": "Str",
+                                            "value": "こんにちは、世界。",
+                                            "position": {
+                                                "start": {
+                                                    "line": 4,
+                                                    "column": 10,
+                                                    "offset": 55
+                                                },
+                                                "end": {
+                                                    "line": 4,
+                                                    "column": 19,
+                                                    "offset": 64
+                                                }
+                                            },
+                                            "loc": {
+                                                "start": {
+                                                    "line": 4,
+                                                    "column": 9
+                                                },
+                                                "end": {
+                                                    "line": 4,
+                                                    "column": 18
+                                                }
+                                            },
+                                            "range": [
+                                                55,
+                                                64
+                                            ],
+                                            "raw": "こんにちは、世界。"
+                                        }
+                                    ],
+                                    "position": {
+                                        "start": {
+                                            "line": 4,
+                                            "column": 4,
+                                            "offset": 49
+                                        },
+                                        "end": {
+                                            "line": 4,
+                                            "column": 26,
+                                            "offset": 71
+                                        }
+                                    },
+                                    "loc": {
+                                        "start": {
+                                            "line": 4,
+                                            "column": 3
+                                        },
+                                        "end": {
+                                            "line": 4,
+                                            "column": 25
+                                        }
+                                    },
+                                    "range": [
+                                        49,
+                                        71
+                                    ],
+                                    "raw": "<span>こんにちは、世界。</span>"
+                                }
+                            ],
+                            "position": {
+                                "start": {
+                                    "line": 4,
+                                    "column": 1,
+                                    "offset": 46
+                                },
+                                "end": {
+                                    "line": 4,
+                                    "column": 30,
+                                    "offset": 75
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 4,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "line": 4,
+                                    "column": 29
+                                }
+                            },
+                            "range": [
+                                46,
+                                75
+                            ],
+                            "raw": "<p><span>こんにちは、世界。</span></p>"
+                        },
+                        {
+                            "type": "Str",
+                            "value": "\n",
+                            "position": {
+                                "start": {
+                                    "line": 4,
+                                    "column": 30,
+                                    "offset": 75
+                                },
+                                "end": {
+                                    "line": 5,
+                                    "column": 1,
+                                    "offset": 76
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 4,
+                                    "column": 29
+                                },
+                                "end": {
+                                    "line": 5,
+                                    "column": 0
+                                }
+                            },
+                            "range": [
+                                75,
+                                76
+                            ],
+                            "raw": "\n"
+                        },
+                        {
+                            "type": "Paragraph",
+                            "tagName": "p",
+                            "properties": {},
+                            "children": [
+                                {
+                                    "type": "span",
+                                    "tagName": "span",
+                                    "properties": {},
+                                    "children": [
+                                        {
+                                            "type": "span",
+                                            "tagName": "span",
+                                            "properties": {},
+                                            "children": [
+                                                {
+                                                    "type": "Str",
+                                                    "value": "こんにちは、",
+                                                    "position": {
+                                                        "start": {
+                                                            "line": 5,
+                                                            "column": 16,
+                                                            "offset": 91
+                                                        },
+                                                        "end": {
+                                                            "line": 5,
+                                                            "column": 22,
+                                                            "offset": 97
+                                                        }
+                                                    },
+                                                    "loc": {
+                                                        "start": {
+                                                            "line": 5,
+                                                            "column": 15
+                                                        },
+                                                        "end": {
+                                                            "line": 5,
+                                                            "column": 21
+                                                        }
+                                                    },
+                                                    "range": [
+                                                        91,
+                                                        97
+                                                    ],
+                                                    "raw": "こんにちは、"
+                                                }
+                                            ],
+                                            "position": {
+                                                "start": {
+                                                    "line": 5,
+                                                    "column": 10,
+                                                    "offset": 85
+                                                },
+                                                "end": {
+                                                    "line": 5,
+                                                    "column": 29,
+                                                    "offset": 104
+                                                }
+                                            },
+                                            "loc": {
+                                                "start": {
+                                                    "line": 5,
+                                                    "column": 9
+                                                },
+                                                "end": {
+                                                    "line": 5,
+                                                    "column": 28
+                                                }
+                                            },
+                                            "range": [
+                                                85,
+                                                104
+                                            ],
+                                            "raw": "<span>こんにちは、</span>"
+                                        },
+                                        {
+                                            "type": "span",
+                                            "tagName": "span",
+                                            "properties": {},
+                                            "children": [
+                                                {
+                                                    "type": "Str",
+                                                    "value": "世界。",
+                                                    "position": {
+                                                        "start": {
+                                                            "line": 5,
+                                                            "column": 35,
+                                                            "offset": 110
+                                                        },
+                                                        "end": {
+                                                            "line": 5,
+                                                            "column": 38,
+                                                            "offset": 113
+                                                        }
+                                                    },
+                                                    "loc": {
+                                                        "start": {
+                                                            "line": 5,
+                                                            "column": 34
+                                                        },
+                                                        "end": {
+                                                            "line": 5,
+                                                            "column": 37
+                                                        }
+                                                    },
+                                                    "range": [
+                                                        110,
+                                                        113
+                                                    ],
+                                                    "raw": "世界。"
+                                                }
+                                            ],
+                                            "position": {
+                                                "start": {
+                                                    "line": 5,
+                                                    "column": 29,
+                                                    "offset": 104
+                                                },
+                                                "end": {
+                                                    "line": 5,
+                                                    "column": 45,
+                                                    "offset": 120
+                                                }
+                                            },
+                                            "loc": {
+                                                "start": {
+                                                    "line": 5,
+                                                    "column": 28
+                                                },
+                                                "end": {
+                                                    "line": 5,
+                                                    "column": 44
+                                                }
+                                            },
+                                            "range": [
+                                                104,
+                                                120
+                                            ],
+                                            "raw": "<span>世界。</span>"
+                                        }
+                                    ],
+                                    "position": {
+                                        "start": {
+                                            "line": 5,
+                                            "column": 4,
+                                            "offset": 79
+                                        },
+                                        "end": {
+                                            "line": 5,
+                                            "column": 52,
+                                            "offset": 127
+                                        }
+                                    },
+                                    "loc": {
+                                        "start": {
+                                            "line": 5,
+                                            "column": 3
+                                        },
+                                        "end": {
+                                            "line": 5,
+                                            "column": 51
+                                        }
+                                    },
+                                    "range": [
+                                        79,
+                                        127
+                                    ],
+                                    "raw": "<span><span>こんにちは、</span><span>世界。</span></span>"
+                                }
+                            ],
+                            "position": {
+                                "start": {
+                                    "line": 5,
+                                    "column": 1,
+                                    "offset": 76
+                                },
+                                "end": {
+                                    "line": 5,
+                                    "column": 56,
+                                    "offset": 131
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 5,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "line": 5,
+                                    "column": 55
+                                }
+                            },
+                            "range": [
+                                76,
+                                131
+                            ],
+                            "raw": "<p><span><span>こんにちは、</span><span>世界。</span></span></p>"
+                        },
+                        {
+                            "type": "Str",
+                            "value": "\n\n\n",
+                            "position": {
+                                "start": {
+                                    "line": 5,
+                                    "column": 56,
+                                    "offset": 131
+                                },
+                                "end": {
+                                    "line": 8,
+                                    "column": 1,
+                                    "offset": 148
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 5,
+                                    "column": 55
+                                },
+                                "end": {
+                                    "line": 8,
+                                    "column": 0
+                                }
+                            },
+                            "range": [
+                                131,
+                                148
+                            ],
+                            "raw": "\n</body>\n</html>\n"
+                        }
+                    ],
+                    "position": {
+                        "start": {
+                            "line": 3,
+                            "column": 1,
+                            "offset": 39
+                        },
+                        "end": {
+                            "line": 8,
+                            "column": 1,
+                            "offset": 148
+                        }
+                    },
+                    "loc": {
+                        "start": {
+                            "line": 3,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 8,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        39,
+                        148
+                    ],
+                    "raw": "<body>\n<p><span>こんにちは、世界。</span></p>\n<p><span><span>こんにちは、</span><span>世界。</span></span></p>\n</body>\n</html>\n"
+                }
+            ],
+            "position": {
+                "start": {
+                    "line": 1,
+                    "column": 1,
+                    "offset": 0
+                },
+                "end": {
+                    "line": 8,
+                    "column": 1,
+                    "offset": 148
+                }
+            },
+            "loc": {
+                "start": {
+                    "line": 1,
+                    "column": 0
+                },
+                "end": {
+                    "line": 8,
+                    "column": 0
+                }
+            },
+            "range": [
+                0,
+                148
+            ],
+            "raw": "<html>\n<head><title>テスト</title></head>\n<body>\n<p><span>こんにちは、世界。</span></p>\n<p><span><span>こんにちは、</span><span>世界。</span></span></p>\n</body>\n</html>\n"
+        }
+    ],
+    "data": {
+        "quirksMode": true
+    },
+    "position": {
+        "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+        },
+        "end": {
+            "line": 8,
+            "column": 1,
+            "offset": 148
+        }
+    },
+    "loc": {
+        "start": {
+            "line": 1,
+            "column": 0
+        },
+        "end": {
+            "line": 8,
+            "column": 0
+        }
+    },
+    "range": [
+        0,
+        148
+    ],
+    "raw": "<html>\n<head><title>テスト</title></head>\n<body>\n<p><span>こんにちは、世界。</span></p>\n<p><span><span>こんにちは、</span><span>世界。</span></span></p>\n</body>\n</html>\n"
+}

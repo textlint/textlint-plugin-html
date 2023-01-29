@@ -2,12 +2,15 @@
 
 Add HTML support for [textlint](https://github.com/textlint/textlint "textlint").
 
-What is textlint plugin? Please see https://github.com/textlint/textlint/blob/master/docs/plugin.md
-
+What is textlint plugin? Please see <https://github.com/textlint/textlint/blob/master/docs/plugin.md>
 
 ## Installation
 
     npm install textlint-plugin-html
+
+Requirements:
+
+- textlint v13+
 
 ## Default supported extensions
 
@@ -51,6 +54,16 @@ For example, if you want to treat `.custom-ext` as html, put following config to
 ## Tests
 
     npm test
+
+## Development
+
+If you update snapshot, please run `npm run updateSnapshot`.
+
+### Add new test case
+
+1. add new fixture file to `test/ast-test-case/<test-case-name>/index.html`
+2. npm run updateSnapshot
+3. check outputs
 
 ## Contributing
 
