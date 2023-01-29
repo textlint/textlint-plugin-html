@@ -1,6 +1,6 @@
 // LICENSE : MIT
 "use strict";
-import hast from "hast";
+import rehype from "rehype";
 import traverse from "traverse";
 import StructuredSource from "structured-source";
 import {nodeTypes, tagNameToType} from "./mapping";

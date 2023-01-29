@@ -1,11 +1,15 @@
 // LICENSE : MIT
 "use strict";
-const assert = require("assert");
-const fs = require("fs");
-const path = require("path");
-const test = require("@textlint/ast-tester").test;
-const glob = require("glob");
-import {parse} from "../src/html-to-ast";
+import assert from "assert";
+import fs from "fs";
+import path from "path";
+import { test } from "@textlint/ast-tester";
+import glob from "glob";
+import { parse } from "../src/html-to-ast";
+import { fileURLToPath } from "url";
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 describe("html-to-ast-test", function () {
     it("should return AST that passed isTxtAST", function () {
         const fixture = fs.readFileSync(path.join(__dirname, "fixtures/wikipedia.html"), "utf-8");
