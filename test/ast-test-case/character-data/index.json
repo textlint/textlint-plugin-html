@@ -64,12 +64,12 @@
             "raw": "<![CDATA[<delta>"
         },
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [],
@@ -90,7 +90,7 @@
                     "raw": "<!--\nCDATA in HTML is no longer allowed.\nIt will be parsed like a declaration (`<!content>`, just like\nthe doctype), which means `>`s will break out of them.\nThen, it’ll result in a comment.\n\nCDATA in foreign contet is allowed, but is also “garbled”.\n-->\n\n<![CDATA[<delta>Echo</delta>]]>\n\n<![CDATA[]]>\n\n<p>You can add a string to a number, but this stringifies the number:</p>\n<math>\n <ms><![CDATA[x<y]]></ms>\n <mo>+</mo>\n <mn>3</mn>\n <mo>=</mo>\n <ms><![CDATA[x>y3]]></ms>\n</math>\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [
@@ -284,7 +284,7 @@
                             "raw": "\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "math",
                             "tagName": "math",
                             "properties": {},
                             "children": [
@@ -320,7 +320,7 @@
                                     "raw": "\n "
                                 },
                                 {
-                                    "type": "Html",
+                                    "type": "ms",
                                     "tagName": "ms",
                                     "properties": {},
                                     "children": [
@@ -416,7 +416,7 @@
                                     "raw": "\n "
                                 },
                                 {
-                                    "type": "Html",
+                                    "type": "mo",
                                     "tagName": "mo",
                                     "properties": {},
                                     "children": [
@@ -512,7 +512,7 @@
                                     "raw": "\n "
                                 },
                                 {
-                                    "type": "Html",
+                                    "type": "mn",
                                     "tagName": "mn",
                                     "properties": {},
                                     "children": [
@@ -608,7 +608,7 @@
                                     "raw": "\n "
                                 },
                                 {
-                                    "type": "Html",
+                                    "type": "mo",
                                     "tagName": "mo",
                                     "properties": {},
                                     "children": [
@@ -704,7 +704,7 @@
                                     "raw": "\n "
                                 },
                                 {
-                                    "type": "Html",
+                                    "type": "ms",
                                     "tagName": "ms",
                                     "properties": {},
                                     "children": [

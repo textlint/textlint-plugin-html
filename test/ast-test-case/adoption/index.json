@@ -2,12 +2,12 @@
     "type": "Document",
     "children": [
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [],
@@ -28,7 +28,7 @@
                     "raw": "<a><b><b><p></a>\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [
@@ -38,12 +38,12 @@
                             "properties": {},
                             "children": [
                                 {
-                                    "type": "Html",
+                                    "type": "b",
                                     "tagName": "b",
                                     "properties": {},
                                     "children": [
                                         {
-                                            "type": "Html",
+                                            "type": "b",
                                             "tagName": "b",
                                             "properties": {},
                                             "children": [],
@@ -134,12 +134,12 @@
                             "raw": "<a><b><b>"
                         },
                         {
-                            "type": "Html",
+                            "type": "b",
                             "tagName": "b",
                             "properties": {},
                             "children": [
                                 {
-                                    "type": "Html",
+                                    "type": "b",
                                     "tagName": "b",
                                     "properties": {},
                                     "children": [
@@ -149,7 +149,7 @@
                                             "properties": {},
                                             "children": [
                                                 {
-                                                    "type": "Html",
+                                                    "type": "Link",
                                                     "tagName": "a",
                                                     "properties": {},
                                                     "children": [],

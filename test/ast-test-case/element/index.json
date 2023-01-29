@@ -2,12 +2,12 @@
     "type": "Document",
     "children": [
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [],
@@ -28,7 +28,7 @@
                     "raw": "<strong>Hello World.</strong>\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [

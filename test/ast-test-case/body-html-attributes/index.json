@@ -2,7 +2,7 @@
     "type": "Document",
     "children": [
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {
                 "className": [
@@ -12,7 +12,7 @@
             },
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [],
@@ -33,7 +33,7 @@
                     "raw": "<html>\n<body id=\"a\" title=\"b\" class=\"c\">\n<html class=\"d\" onclick=\"e\">\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {
                         "id": "a",

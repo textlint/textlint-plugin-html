@@ -2,12 +2,12 @@
     "type": "Document",
     "children": [
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [],
@@ -28,12 +28,12 @@
                     "raw": "<div><strong>Strong</strong>, <em>emphasis</em>, and <code>code</code>.</div>\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [
                         {
-                            "type": "Html",
+                            "type": "div",
                             "tagName": "div",
                             "properties": {},
                             "children": [

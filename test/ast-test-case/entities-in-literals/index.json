@@ -2,17 +2,17 @@
     "type": "Document",
     "children": [
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [
                         {
-                            "type": "Html",
+                            "type": "script",
                             "tagName": "script",
                             "properties": {},
                             "children": [
@@ -108,7 +108,7 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "script",
                             "tagName": "script",
                             "properties": {},
                             "children": [
@@ -204,7 +204,7 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "style",
                             "tagName": "style",
                             "properties": {},
                             "children": [
@@ -317,7 +317,7 @@
                     "raw": "<script>\nif (12 > 13) {\n    console.log('foo');\n}\n</script>\n\n<script>\n  for (var index = -1, length = 2; index < length; index++) {\n    console.log(index);\n  }\n</script>\n\n<style>\nhtml > body {\n  color: red;\n}\n</style>\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [],

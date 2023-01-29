@@ -2,12 +2,12 @@
     "type": "Document",
     "children": [
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [],
@@ -28,12 +28,12 @@
                     "raw": "<foo>bar</foo>\n<foo>bar</foo bar>\n<foo>bar</foo bar=\"baz\">\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [
                         {
-                            "type": "Html",
+                            "type": "foo",
                             "tagName": "foo",
                             "properties": {},
                             "children": [
@@ -129,7 +129,7 @@
                             "raw": "\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "foo",
                             "tagName": "foo",
                             "properties": {},
                             "children": [
@@ -225,7 +225,7 @@
                             "raw": "\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "foo",
                             "tagName": "foo",
                             "properties": {},
                             "children": [

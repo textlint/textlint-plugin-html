@@ -2,12 +2,12 @@
     "type": "Document",
     "children": [
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [],
@@ -28,7 +28,7 @@
                     "raw": "<body></div></body></html>\n\n\n</p>\n\n<div></p></div>\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [
@@ -64,7 +64,7 @@
                             "raw": "\n\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "Paragraph",
                             "tagName": "p",
                             "properties": {},
                             "children": [],
@@ -116,12 +116,12 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "div",
                             "tagName": "div",
                             "properties": {},
                             "children": [
                                 {
-                                    "type": "Html",
+                                    "type": "Paragraph",
                                     "tagName": "p",
                                     "properties": {},
                                     "children": [],

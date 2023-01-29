@@ -1,5 +1,5 @@
 Document(root)
-  Html(element)
-    Html(element)
-    Html(element)
+  html(element)
+    head(element)
+    body(element)
       Str(text)

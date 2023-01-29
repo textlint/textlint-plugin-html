@@ -2,7 +2,7 @@
     "type": "Document",
     "children": [
         {
-            "type": "Html",
+            "type": "doctype",
             "position": {
                 "start": {
                     "line": 1,
@@ -32,17 +32,17 @@
             "raw": "<!doctype html>"
         },
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [
                         {
-                            "type": "Html",
+                            "type": "title",
                             "tagName": "title",
                             "properties": {},
                             "children": [
@@ -155,7 +155,7 @@
                     "raw": "<html>\n<title>Not-Quirksmode</title>\n<p>Outside of quirksmode, the following table is outside this paragraph:\n<table>!</table>\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [
@@ -256,7 +256,7 @@
                             "raw": "!"
                         },
                         {
-                            "type": "Html",
+                            "type": "table",
                             "tagName": "table",
                             "properties": {},
                             "children": [],

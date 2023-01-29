@@ -2,12 +2,12 @@
     "type": "Document",
     "children": [
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [],
@@ -28,7 +28,7 @@
                     "raw": "<img src=\"#\" src>\n<p>\n<div></div>\n</br>\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [
@@ -164,7 +164,7 @@
                             "raw": "<p>\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "div",
                             "tagName": "div",
                             "properties": {},
                             "children": [],
@@ -228,7 +228,7 @@
                             "raw": "\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "break",
                             "tagName": "br",
                             "properties": {},
                             "children": [],

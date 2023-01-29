@@ -2,17 +2,17 @@
     "type": "Document",
     "children": [
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [
                         {
-                            "type": "Html",
+                            "type": "title",
                             "tagName": "title",
                             "properties": {},
                             "children": [
@@ -125,7 +125,7 @@
                     "raw": "<html>\n<title>Quirksmode</title>\n<p>In quirksmode, the following table is in this paragraph:\n<table>!</table>\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [
@@ -166,7 +166,7 @@
                                     "raw": "In quirksmode, the following table is in this paragraph:\n<table>!"
                                 },
                                 {
-                                    "type": "Html",
+                                    "type": "table",
                                     "tagName": "table",
                                     "properties": {},
                                     "children": [],

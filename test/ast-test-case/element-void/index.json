@@ -2,12 +2,12 @@
     "type": "Document",
     "children": [
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [],
@@ -28,7 +28,7 @@
                     "raw": "<img src=\"http://example.com/fav.ico\" alt=\"foo\" title=\"bar\">\n\n<hr>\n\n<p>this<br/>and that</p>\n\n<p>this<br>and that</p>\n\n<svg><path><circle><g><rect></svg>\n\n<svg><path/><circle/><g/><rect/></svg>\n\n<math><mglyph><mspace><malignmark></math>\n\n<math><mglyph/><mspace/><malignmark/></math>\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [
@@ -485,27 +485,27 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "svg",
                             "tagName": "svg",
                             "properties": {},
                             "children": [
                                 {
-                                    "type": "Html",
+                                    "type": "path",
                                     "tagName": "path",
                                     "properties": {},
                                     "children": [
                                         {
-                                            "type": "Html",
+                                            "type": "circle",
                                             "tagName": "circle",
                                             "properties": {},
                                             "children": [
                                                 {
-                                                    "type": "Html",
+                                                    "type": "g",
                                                     "tagName": "g",
                                                     "properties": {},
                                                     "children": [
                                                         {
-                                                            "type": "Html",
+                                                            "type": "rect",
                                                             "tagName": "rect",
                                                             "properties": {},
                                                             "children": [],
@@ -685,12 +685,12 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "svg",
                             "tagName": "svg",
                             "properties": {},
                             "children": [
                                 {
-                                    "type": "Html",
+                                    "type": "path",
                                     "tagName": "path",
                                     "properties": {},
                                     "children": [],
@@ -723,7 +723,7 @@
                                     "raw": "<path/>"
                                 },
                                 {
-                                    "type": "Html",
+                                    "type": "circle",
                                     "tagName": "circle",
                                     "properties": {},
                                     "children": [],
@@ -756,7 +756,7 @@
                                     "raw": "<circle/>"
                                 },
                                 {
-                                    "type": "Html",
+                                    "type": "g",
                                     "tagName": "g",
                                     "properties": {},
                                     "children": [],
@@ -789,7 +789,7 @@
                                     "raw": "<g/>"
                                 },
                                 {
-                                    "type": "Html",
+                                    "type": "rect",
                                     "tagName": "rect",
                                     "properties": {},
                                     "children": [],
@@ -882,22 +882,22 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "math",
                             "tagName": "math",
                             "properties": {},
                             "children": [
                                 {
-                                    "type": "Html",
+                                    "type": "mglyph",
                                     "tagName": "mglyph",
                                     "properties": {},
                                     "children": [
                                         {
-                                            "type": "Html",
+                                            "type": "mspace",
                                             "tagName": "mspace",
                                             "properties": {},
                                             "children": [
                                                 {
-                                                    "type": "Html",
+                                                    "type": "malignmark",
                                                     "tagName": "malignmark",
                                                     "properties": {},
                                                     "children": [],
@@ -1048,12 +1048,12 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "math",
                             "tagName": "math",
                             "properties": {},
                             "children": [
                                 {
-                                    "type": "Html",
+                                    "type": "mglyph",
                                     "tagName": "mglyph",
                                     "properties": {},
                                     "children": [],
@@ -1086,7 +1086,7 @@
                                     "raw": "<mglyph/>"
                                 },
                                 {
-                                    "type": "Html",
+                                    "type": "mspace",
                                     "tagName": "mspace",
                                     "properties": {},
                                     "children": [],
@@ -1119,7 +1119,7 @@
                                     "raw": "<mspace/>"
                                 },
                                 {
-                                    "type": "Html",
+                                    "type": "malignmark",
                                     "tagName": "malignmark",
                                     "properties": {},
                                     "children": [],

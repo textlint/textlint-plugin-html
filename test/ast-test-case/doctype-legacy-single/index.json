@@ -2,7 +2,7 @@
     "type": "Document",
     "children": [
         {
-            "type": "Html",
+            "type": "doctype",
             "position": {
                 "start": {
                     "line": 1,
@@ -32,12 +32,12 @@
             "raw": "<!DOCTYPE html SYSTEM 'about:legacy-compat'>"
         },
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [],
@@ -58,7 +58,7 @@
                     "raw": "<!DOCTYPE html SYSTEM 'about:legacy-compat'>\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [],

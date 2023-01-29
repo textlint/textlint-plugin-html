@@ -64,12 +64,12 @@
             "raw": "<!---->"
         },
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [],
@@ -90,7 +90,7 @@
                     "raw": "<!--This is a comment-->\n\n<!---->\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [],

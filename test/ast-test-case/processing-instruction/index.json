@@ -33,12 +33,12 @@
             "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
         },
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [],
@@ -59,7 +59,7 @@
                     "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [],

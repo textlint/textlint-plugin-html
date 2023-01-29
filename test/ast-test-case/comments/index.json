@@ -157,12 +157,12 @@
             "raw": "<!--echo -- foxtrot-->"
         },
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [],
@@ -183,7 +183,7 @@
                     "raw": "<!--Alpha--> <!--bravo-->\n\n<!--charlie--><!--delta-->\n\n<!--echo -- foxtrot-->\n\nValid: <!--My favourite operators are > and <!-->\n\nInvalid: <!-->.\nInvalid: <!--->.\nInvalid: <!--alpha<!--bravo-->.\nInvalid: <!--charlie<!--->.\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [

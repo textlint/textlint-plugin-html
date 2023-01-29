@@ -33,12 +33,12 @@
             "raw": "<!--core:-->"
         },
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [],
@@ -59,7 +59,7 @@
                     "raw": "<!--core:-->\n\n<a href=\"http://alpha.com\" class=\"bravo\" download></a>\n\n<!--double:-->\n\n<div class class></div>\n\n<!--unknown:-->\n\n<a ng-init></a>\n\n<a ng-repeat=\"\"></a>\n\n<a ng-click=\"ctrl.onintentclick($scope)\">ng-whatevs</a>.\n\n<!--empty:-->\n\n<abbr title></abbr>\n\n<!--space separated:-->\n\n<code class=\"language-foo bar\"></code>\n\n<code class=\"\"></code>\n\n<code class></code>\n\n<code class=\" \"></code>\n\n<!--comma separated:-->\n\n<img srcset=\"medium.jpg 1000w, large.jpg 2000w\">\n\n<img srcset=\"medium.jpg 1000w\">\n\n<img srcset=\"\">\n\n<img srcset=\" \">\n\n<img srcset=\",\">\n\n<img srcset=\" , \">\n\n<img srcset=\",foo\">\n\n<img srcset=\"bar,\">\n\n<img srcset=\",baz,\">\n\n<!--style:-->\n\n<div></div>\n\n<div style=\"\"></div>\n\n<div style=\"color\"></div>\n\n<div style=\"color:\"></div>\n\n<div style=\"color:red\"></div>\n\n<div style=\"color:;\"></div>\n\n<div style=\"color:red;\"></div>\n\n<div style=\"color:red;background-color\"></div>\n\n<div style=\"color:red;background-color: blue\"></div>\n\n<div style=\"color:red;background-color: blue;\"></div>\n\n<!--boolean:-->\n\n<script async></script>\n<script async=\"\"></script>\n<script async=\"async\"></script>\n\n<!--overloaded boolean (as boolean):-->\n\n<a download></a>\n<a download=\"\"></a>\n<a download=\"download\"></a>\n\n<!--overloaded boolean (as overloaded):-->\n\n<a download=\"example.mp3\"></a>\n\n<!--positive numeric:-->\n\n<img height=\"100\">\n\n<!--numeric:-->\n\n<meter min=\"0\" low=\"40\" high=\"90\" max=\"100\" value=\"95\"></meter>\n\n<!--placeholder:-->\n\n<a>placeholder</a>\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [
@@ -197,7 +197,7 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "div",
                             "tagName": "div",
                             "properties": {
                                 "className": []
@@ -617,7 +617,7 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "abbr",
                             "tagName": "abbr",
                             "properties": {
                                 "title": ""
@@ -1730,7 +1730,7 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "div",
                             "tagName": "div",
                             "properties": {},
                             "children": [],
@@ -1794,7 +1794,7 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "div",
                             "tagName": "div",
                             "properties": {
                                 "style": ""
@@ -1860,7 +1860,7 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "div",
                             "tagName": "div",
                             "properties": {
                                 "style": "color"
@@ -1926,7 +1926,7 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "div",
                             "tagName": "div",
                             "properties": {
                                 "style": "color:"
@@ -1992,7 +1992,7 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "div",
                             "tagName": "div",
                             "properties": {
                                 "style": "color:red"
@@ -2058,7 +2058,7 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "div",
                             "tagName": "div",
                             "properties": {
                                 "style": "color:;"
@@ -2124,7 +2124,7 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "div",
                             "tagName": "div",
                             "properties": {
                                 "style": "color:red;"
@@ -2190,7 +2190,7 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "div",
                             "tagName": "div",
                             "properties": {
                                 "style": "color:red;background-color"
@@ -2256,7 +2256,7 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "div",
                             "tagName": "div",
                             "properties": {
                                 "style": "color:red;background-color: blue"
@@ -2322,7 +2322,7 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "div",
                             "tagName": "div",
                             "properties": {
                                 "style": "color:red;background-color: blue;"
@@ -2450,7 +2450,7 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "script",
                             "tagName": "script",
                             "properties": {
                                 "async": true
@@ -2516,7 +2516,7 @@
                             "raw": "\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "script",
                             "tagName": "script",
                             "properties": {
                                 "async": true
@@ -2582,7 +2582,7 @@
                             "raw": "\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "script",
                             "tagName": "script",
                             "properties": {
                                 "async": true
@@ -3226,7 +3226,7 @@
                             "raw": "\n\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "meter",
                             "tagName": "meter",
                             "properties": {
                                 "min": "0",

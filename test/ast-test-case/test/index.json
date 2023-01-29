@@ -2,7 +2,7 @@
     "type": "Document",
     "children": [
         {
-            "type": "Html",
+            "type": "doctype",
             "position": {
                 "start": {
                     "line": 1,
@@ -32,14 +32,14 @@
             "raw": "<!DOCTYPE html>"
         },
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {
                 "lang": "en"
             },
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
                     "children": [
@@ -75,7 +75,7 @@
                             "raw": "\n    "
                         },
                         {
-                            "type": "Html",
+                            "type": "meta",
                             "tagName": "meta",
                             "properties": {
                                 "charSet": "UTF-8"
@@ -141,7 +141,7 @@
                             "raw": "\n    "
                         },
                         {
-                            "type": "Html",
+                            "type": "title",
                             "tagName": "title",
                             "properties": {},
                             "children": [
@@ -297,7 +297,7 @@
                     "raw": "\n"
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
                     "children": [
@@ -333,7 +333,7 @@
                             "raw": "\n"
                         },
                         {
-                            "type": "Html",
+                            "type": "div",
                             "tagName": "div",
                             "properties": {},
                             "children": [

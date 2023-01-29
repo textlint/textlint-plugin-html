@@ -2,96 +2,26 @@
     "type": "Document",
     "children": [
         {
-            "type": "Html",
+            "type": "html",
             "tagName": "html",
             "properties": {},
             "children": [
                 {
-                    "type": "Html",
+                    "type": "head",
                     "tagName": "head",
                     "properties": {},
-                    "children": [],
-                    "loc": {
-                        "start": {
-                            "line": 1,
-                            "column": 0
-                        },
-                        "end": {
-                            "line": 1,
-                            "column": 0
-                        }
-                    },
-                    "range": [
-                        0,
-                        0
-                    ],
-                    "raw": ""
+                    "children": []
                 },
                 {
-                    "type": "Html",
+                    "type": "body",
                     "tagName": "body",
                     "properties": {},
-                    "children": [],
-                    "loc": {
-                        "start": {
-                            "line": 1,
-                            "column": 0
-                        },
-                        "end": {
-                            "line": 1,
-                            "column": 0
-                        }
-                    },
-                    "range": [
-                        0,
-                        0
-                    ],
-                    "raw": ""
+                    "children": []
                 }
-            ],
-            "loc": {
-                "start": {
-                    "line": 1,
-                    "column": 0
-                },
-                "end": {
-                    "line": 1,
-                    "column": 0
-                }
-            },
-            "range": [
-                0,
-                0
-            ],
-            "raw": ""
+            ]
         }
     ],
     "data": {
         "quirksMode": true
-    },
-    "position": {
-        "start": {
-            "line": 1,
-            "column": 1
-        },
-        "end": {
-            "line": 1,
-            "column": 1
-        }
-    },
-    "loc": {
-        "start": {
-            "line": 1,
-            "column": 0
-        },
-        "end": {
-            "line": 1,
-            "column": 0
-        }
-    },
-    "range": [
-        0,
-        0
-    ],
-    "raw": ""
+    }
 }
