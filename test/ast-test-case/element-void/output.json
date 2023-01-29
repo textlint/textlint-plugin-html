@@ -67,7 +67,10 @@
                                 0,
                                 60
                             ],
-                            "raw": "<img src=\"http://example.com/fav.ico\" alt=\"foo\" title=\"bar\">"
+                            "raw": "<img src=\"http://example.com/fav.ico\" alt=\"foo\" title=\"bar\">",
+                            "alt": "foo",
+                            "title": "bar",
+                            "url": "http://example.com/fav.ico"
                         },
                         {
                             "type": "Str",

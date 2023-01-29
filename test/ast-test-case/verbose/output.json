@@ -65,7 +65,8 @@
                                 0,
                                 17
                             ],
-                            "raw": "<img src=\"#\" src>"
+                            "raw": "<img src=\"#\" src>",
+                            "url": "#"
                         },
                         {
                             "type": "Str",

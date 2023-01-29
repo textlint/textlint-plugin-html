@@ -1,5 +1,28 @@
 // LICENSE : MIT
-import type { TxtParentNode } from "@textlint/ast-node-types";
+import type {
+    TxtBlockQuoteNode,
+    TxtBreakNode,
+    TxtCodeBlockNode,
+    TxtCodeNode,
+    TxtCommentNode,
+    TxtDeleteNode,
+    TxtDocumentNode,
+    TxtEmphasisNode,
+    TxtHeaderNode,
+    TxtHorizontalRuleNode,
+    TxtHtmlNode,
+    TxtImageNode,
+    TxtLinkNode,
+    TxtListItemNode,
+    TxtListNode,
+    TxtParagraphNode,
+    TxtParentNode,
+    TxtStrNode,
+    TxtStrongNode,
+    TxtTableCellNode,
+    TxtTableNode,
+    TxtTableRowNode
+} from "@textlint/ast-node-types";
 import { unified } from 'unified'
 import rehypeParse from 'rehype-parse'
 import traverse, { TraverseContext } from "traverse";
@@ -129,8 +152,37 @@ export function parse(html: string, options?: ParseOptions) {
             }
             // === properties ===
             // map `url` to Link node
-            if (node.type === "Link" && typeof node.properties.href !== "undefined") {
-                node.url = node.properties.href;
+            const txtNode = node as TxtBlockQuoteNode |
+                TxtBreakNode |
+                TxtCodeBlockNode |
+                TxtCommentNode |
+                TxtDeleteNode |
+                TxtDocumentNode |
+                TxtEmphasisNode |
+                TxtHeaderNode |
+                TxtHorizontalRuleNode |
+                TxtHtmlNode |
+                TxtImageNode |
+                TxtLinkNode |
+                TxtListItemNode |
+                TxtListNode |
+                TxtParagraphNode |
+                TxtCodeNode |
+                TxtStrNode |
+                TxtStrongNode |
+                TxtTableNode |
+                TxtTableRowNode |
+                TxtTableCellNode;
+            if (txtNode.type === "Link") {
+                if (txtNode.properties.href !== undefined) txtNode.url = txtNode.properties.href;
+                if (txtNode.properties.title !== undefined) txtNode.title = txtNode.properties.title;
+            } else if (txtNode.type === "Image") {
+                if (txtNode.properties.alt !== undefined) txtNode.alt = txtNode.properties.alt;
+                if (txtNode.properties.title !== undefined) txtNode.title = txtNode.properties.title;
+                if (txtNode.properties.src !== undefined) txtNode.url = txtNode.properties.src;
+            } else if (txtNode.type === "Header") {
+                const depth = Number(txtNode.tagName.slice(1)) as TxtHeaderNode["depth"];
+                if (depth > 0 && depth < 7) txtNode.depth = depth;
             }
         }
     });
