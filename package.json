@@ -54,6 +54,7 @@
   },
   "devDependencies": {
     "@textlint/ast-tester": "^13.0.5",
+    "@textlint/kernel": "^13.0.5",
     "@textlint/module-interop": "^13.0.5",
     "@types/mocha": "^10.0.1",
     "@types/node": "^18.11.18",

@@ -4,6 +4,7 @@ import assert from "assert";
 import HTMLPlugin from "../src/index"
 import {parse} from "../src/html-to-ast";
 import {tagNameToType} from "../src/mapping";
+import { TextlintKernel } from "@textlint/kernel"
 import {TextLintCore} from "textlint";
 import path from "path";
 import { moduleInterop } from "@textlint/module-interop";
