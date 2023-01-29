@@ -2,9 +2,19 @@
     "type": "Document",
     "children": [
         {
-            "type": "UNKNOWN",
-            "name": "!doctype",
-            "value": "!DOCTYPE HTML PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\"",
+            "type": "Html",
+            "position": {
+                "start": {
+                    "line": 1,
+                    "column": 1,
+                    "offset": 0
+                },
+                "end": {
+                    "line": 1,
+                    "column": 64,
+                    "offset": 63
+                }
+            },
             "loc": {
                 "start": {
                     "line": 1,
@@ -22,12 +32,57 @@
             "raw": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\">"
         },
         {
-            "type": "Str",
-            "value": "\n",
+            "type": "Html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "Html",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        64
+                    ],
+                    "raw": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\">\n"
+                },
+                {
+                    "type": "Html",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        64
+                    ],
+                    "raw": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\">\n"
+                }
+            ],
             "loc": {
                 "start": {
                     "line": 1,
-                    "column": 63
+                    "column": 0
                 },
                 "end": {
                     "line": 2,
@@ -35,12 +90,27 @@
                 }
             },
             "range": [
-                63,
+                0,
                 64
             ],
-            "raw": "\n"
+            "raw": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD XHTML 1.0 Transitional//EN\">\n"
         }
     ],
+    "data": {
+        "quirksMode": true
+    },
+    "position": {
+        "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+        },
+        "end": {
+            "line": 2,
+            "column": 1,
+            "offset": 64
+        }
+    },
     "loc": {
         "start": {
             "line": 1,

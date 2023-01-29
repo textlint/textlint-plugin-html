@@ -2,9 +2,19 @@
     "type": "Document",
     "children": [
         {
-            "type": "UNKNOWN",
-            "name": "!doctype",
-            "value": "!DOCTYPE html SYSTEM 'about:legacy-compat'",
+            "type": "Html",
+            "position": {
+                "start": {
+                    "line": 1,
+                    "column": 1,
+                    "offset": 0
+                },
+                "end": {
+                    "line": 1,
+                    "column": 45,
+                    "offset": 44
+                }
+            },
             "loc": {
                 "start": {
                     "line": 1,
@@ -22,12 +32,57 @@
             "raw": "<!DOCTYPE html SYSTEM 'about:legacy-compat'>"
         },
         {
-            "type": "Str",
-            "value": "\n",
+            "type": "Html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "Html",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        45
+                    ],
+                    "raw": "<!DOCTYPE html SYSTEM 'about:legacy-compat'>\n"
+                },
+                {
+                    "type": "Html",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        45
+                    ],
+                    "raw": "<!DOCTYPE html SYSTEM 'about:legacy-compat'>\n"
+                }
+            ],
             "loc": {
                 "start": {
                     "line": 1,
-                    "column": 44
+                    "column": 0
                 },
                 "end": {
                     "line": 2,
@@ -35,12 +90,27 @@
                 }
             },
             "range": [
-                44,
+                0,
                 45
             ],
-            "raw": "\n"
+            "raw": "<!DOCTYPE html SYSTEM 'about:legacy-compat'>\n"
         }
     ],
+    "data": {
+        "quirksMode": false
+    },
+    "position": {
+        "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+        },
+        "end": {
+            "line": 2,
+            "column": 1,
+            "offset": 45
+        }
+    },
     "loc": {
         "start": {
             "line": 1,

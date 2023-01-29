@@ -2,9 +2,19 @@
     "type": "Document",
     "children": [
         {
-            "type": "UNKNOWN",
-            "name": "!doctype",
-            "value": "!DOCTYPE html SYSTEM \"http://www.ibm.com/data/dtd/v11/ibmxhtml1-transitional.dtd\"",
+            "type": "Html",
+            "position": {
+                "start": {
+                    "line": 1,
+                    "column": 1,
+                    "offset": 0
+                },
+                "end": {
+                    "line": 1,
+                    "column": 84,
+                    "offset": 83
+                }
+            },
             "loc": {
                 "start": {
                     "line": 1,
@@ -22,12 +32,57 @@
             "raw": "<!DOCTYPE html SYSTEM \"http://www.ibm.com/data/dtd/v11/ibmxhtml1-transitional.dtd\">"
         },
         {
-            "type": "Str",
-            "value": "\n",
+            "type": "Html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "Html",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        84
+                    ],
+                    "raw": "<!DOCTYPE html SYSTEM \"http://www.ibm.com/data/dtd/v11/ibmxhtml1-transitional.dtd\">\n"
+                },
+                {
+                    "type": "Html",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        84
+                    ],
+                    "raw": "<!DOCTYPE html SYSTEM \"http://www.ibm.com/data/dtd/v11/ibmxhtml1-transitional.dtd\">\n"
+                }
+            ],
             "loc": {
                 "start": {
                     "line": 1,
-                    "column": 83
+                    "column": 0
                 },
                 "end": {
                     "line": 2,
@@ -35,12 +90,27 @@
                 }
             },
             "range": [
-                83,
+                0,
                 84
             ],
-            "raw": "\n"
+            "raw": "<!DOCTYPE html SYSTEM \"http://www.ibm.com/data/dtd/v11/ibmxhtml1-transitional.dtd\">\n"
         }
     ],
+    "data": {
+        "quirksMode": true
+    },
+    "position": {
+        "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+        },
+        "end": {
+            "line": 2,
+            "column": 1,
+            "offset": 84
+        }
+    },
     "loc": {
         "start": {
             "line": 1,

@@ -1,36 +1,131 @@
 {
-  "type": "root",
-  "children": [
-    {
-      "type": "text",
-      "value": "foo",
-      "position": {
+    "type": "Document",
+    "children": [
+        {
+            "type": "Html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "Html",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        8
+                    ],
+                    "raw": "foo<bar\n"
+                },
+                {
+                    "type": "Html",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": [
+                        {
+                            "type": "Str",
+                            "value": "foo",
+                            "position": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 1,
+                                    "offset": 0
+                                },
+                                "end": {
+                                    "line": 2,
+                                    "column": 1,
+                                    "offset": 8
+                                }
+                            },
+                            "loc": {
+                                "start": {
+                                    "line": 1,
+                                    "column": 0
+                                },
+                                "end": {
+                                    "line": 2,
+                                    "column": 0
+                                }
+                            },
+                            "range": [
+                                0,
+                                8
+                            ],
+                            "raw": "foo<bar\n"
+                        }
+                    ],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        8
+                    ],
+                    "raw": "foo<bar\n"
+                }
+            ],
+            "loc": {
+                "start": {
+                    "line": 1,
+                    "column": 0
+                },
+                "end": {
+                    "line": 2,
+                    "column": 0
+                }
+            },
+            "range": [
+                0,
+                8
+            ],
+            "raw": "foo<bar\n"
+        }
+    ],
+    "data": {
+        "quirksMode": true
+    },
+    "position": {
         "start": {
-          "line": 1,
-          "column": 1,
-          "offset": 0
+            "line": 1,
+            "column": 1,
+            "offset": 0
         },
         "end": {
-          "line": 2,
-          "column": 1,
-          "offset": 8
+            "line": 2,
+            "column": 1,
+            "offset": 8
         }
-      }
-    }
-  ],
-  "data": {
-    "quirksMode": false
-  },
-  "position": {
-    "start": {
-      "line": 1,
-      "column": 1,
-      "offset": 0
     },
-    "end": {
-      "line": 2,
-      "column": 1,
-      "offset": 8
-    }
-  }
+    "loc": {
+        "start": {
+            "line": 1,
+            "column": 0
+        },
+        "end": {
+            "line": 2,
+            "column": 0
+        }
+    },
+    "range": [
+        0,
+        8
+    ],
+    "raw": "foo<bar\n"
 }

@@ -1,6 +1,84 @@
 {
     "type": "Document",
-    "children": [],
+    "children": [
+        {
+            "type": "Html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "Html",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 1,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        0
+                    ],
+                    "raw": ""
+                },
+                {
+                    "type": "Html",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 1,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        0
+                    ],
+                    "raw": ""
+                }
+            ],
+            "loc": {
+                "start": {
+                    "line": 1,
+                    "column": 0
+                },
+                "end": {
+                    "line": 1,
+                    "column": 0
+                }
+            },
+            "range": [
+                0,
+                0
+            ],
+            "raw": ""
+        }
+    ],
+    "data": {
+        "quirksMode": true
+    },
+    "position": {
+        "start": {
+            "line": 1,
+            "column": 1
+        },
+        "end": {
+            "line": 1,
+            "column": 1
+        }
+    },
     "loc": {
         "start": {
             "line": 1,

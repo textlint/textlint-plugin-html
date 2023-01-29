@@ -2,9 +2,20 @@
     "type": "Document",
     "children": [
         {
-            "type": "UNKNOWN",
-            "name": "?xml",
+            "type": "Comment",
             "value": "?xml version=\"1.0\" encoding=\"UTF-8\"?",
+            "position": {
+                "start": {
+                    "line": 1,
+                    "column": 1,
+                    "offset": 0
+                },
+                "end": {
+                    "line": 1,
+                    "column": 39,
+                    "offset": 38
+                }
+            },
             "loc": {
                 "start": {
                     "line": 1,
@@ -22,12 +33,57 @@
             "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>"
         },
         {
-            "type": "Str",
-            "value": "\n",
+            "type": "Html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "Html",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        39
+                    ],
+                    "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+                },
+                {
+                    "type": "Html",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        39
+                    ],
+                    "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+                }
+            ],
             "loc": {
                 "start": {
                     "line": 1,
-                    "column": 38
+                    "column": 0
                 },
                 "end": {
                     "line": 2,
@@ -35,12 +91,27 @@
                 }
             },
             "range": [
-                38,
+                0,
                 39
             ],
-            "raw": "\n"
+            "raw": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
         }
     ],
+    "data": {
+        "quirksMode": true
+    },
+    "position": {
+        "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+        },
+        "end": {
+            "line": 2,
+            "column": 1,
+            "offset": 39
+        }
+    },
     "loc": {
         "start": {
             "line": 1,

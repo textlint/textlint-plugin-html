@@ -39,17 +39,22 @@ function mapNodeType(node: Element, parent: TraverseContext | undefined) {
             // other element is "Html"
             return "Html";
         }
-    } else {
+    } else if (node.type in nodeTypes) {
+        // mappable node type
         // text => Str
-        // @ts-expect-error: type is string
         return nodeTypes[node.type];
     }
+    // It is not defined in textlint's AST
+    return "Html";
 }
 
-export function parse(html: string) {
-    const parseHtml = unified().use(rehypeParse, {
-        fragment: true // parse html as fragment
-    })
+export type ParseOptions = {
+    debug: boolean;
+}
+
+export function parse(html: string, options?: ParseOptions) {
+    const isDebug = process.env.DEBUG?.startsWith("textlint:html") ?? options?.debug ?? false;
+    const parseHtml = unified().use(rehypeParse)
     const ast = parseHtml.parse(html);
     const src = new StructuredSource(html);
     const tr = traverse(ast);
@@ -63,11 +68,16 @@ export function parse(html: string) {
         return;
     }
     tr.forEach(function (node) {
-
         if (typeof node === "object" && !Array.isArray(node)) {
             // it is not leaf node
             if (!("type" in node)) {
                 return;
+            }
+            // backup
+            if (isDebug) {
+                Object.defineProperty(node, "_debug_type", {
+                    value: node.type,
+                })
             }
             // avoid conflict <input type="text" />
             // AST node has type and position
@@ -83,6 +93,8 @@ export function parse(html: string) {
                     start: { line: position.start.line, column: position.start.column + 1 },
                     end: { line: position.end.line, column: position.end.column + 1 }
                 };
+            } else {
+                node.type = "Html" as const;
             }
             // map `range`, `loc` and `raw` to node
             if (typeof node.position === "object") {
@@ -117,6 +129,7 @@ export function parse(html: string) {
                 node.range = range;
                 node.raw = html.slice(range[0], range[1]);
             }
+            // === properties ===
             // map `url` to Link node
             if (node.type === "Link" && typeof node.properties.href !== "undefined") {
                 node.url = node.properties.href;

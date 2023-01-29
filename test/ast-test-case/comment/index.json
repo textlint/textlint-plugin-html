@@ -4,6 +4,18 @@
         {
             "type": "Comment",
             "value": "This is a comment",
+            "position": {
+                "start": {
+                    "line": 1,
+                    "column": 1,
+                    "offset": 0
+                },
+                "end": {
+                    "line": 1,
+                    "column": 25,
+                    "offset": 24
+                }
+            },
             "loc": {
                 "start": {
                     "line": 1,
@@ -21,27 +33,20 @@
             "raw": "<!--This is a comment-->"
         },
         {
-            "type": "Str",
-            "value": "\n\n",
-            "loc": {
+            "type": "Comment",
+            "value": "",
+            "position": {
                 "start": {
-                    "line": 1,
-                    "column": 24
+                    "line": 3,
+                    "column": 1,
+                    "offset": 26
                 },
                 "end": {
                     "line": 3,
-                    "column": 0
+                    "column": 8,
+                    "offset": 33
                 }
             },
-            "range": [
-                24,
-                26
-            ],
-            "raw": "\n\n"
-        },
-        {
-            "type": "Comment",
-            "value": "",
             "loc": {
                 "start": {
                     "line": 3,
@@ -59,12 +64,57 @@
             "raw": "<!---->"
         },
         {
-            "type": "Str",
-            "value": "\n",
+            "type": "Html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "Html",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 4,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        34
+                    ],
+                    "raw": "<!--This is a comment-->\n\n<!---->\n"
+                },
+                {
+                    "type": "Html",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 4,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        34
+                    ],
+                    "raw": "<!--This is a comment-->\n\n<!---->\n"
+                }
+            ],
             "loc": {
                 "start": {
-                    "line": 3,
-                    "column": 7
+                    "line": 1,
+                    "column": 0
                 },
                 "end": {
                     "line": 4,
@@ -72,12 +122,27 @@
                 }
             },
             "range": [
-                33,
+                0,
                 34
             ],
-            "raw": "\n"
+            "raw": "<!--This is a comment-->\n\n<!---->\n"
         }
     ],
+    "data": {
+        "quirksMode": true
+    },
+    "position": {
+        "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+        },
+        "end": {
+            "line": 4,
+            "column": 1,
+            "offset": 34
+        }
+    },
     "loc": {
         "start": {
             "line": 1,

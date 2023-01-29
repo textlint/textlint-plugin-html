@@ -2,9 +2,19 @@
     "type": "Document",
     "children": [
         {
-            "type": "UNKNOWN",
-            "name": "!doctype",
-            "value": "!doctype",
+            "type": "Html",
+            "position": {
+                "start": {
+                    "line": 1,
+                    "column": 1,
+                    "offset": 0
+                },
+                "end": {
+                    "line": 1,
+                    "column": 11,
+                    "offset": 10
+                }
+            },
             "loc": {
                 "start": {
                     "line": 1,
@@ -22,12 +32,57 @@
             "raw": "<!doctype>"
         },
         {
-            "type": "Str",
-            "value": "\n",
+            "type": "Html",
+            "tagName": "html",
+            "properties": {},
+            "children": [
+                {
+                    "type": "Html",
+                    "tagName": "head",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        11
+                    ],
+                    "raw": "<!doctype>\n"
+                },
+                {
+                    "type": "Html",
+                    "tagName": "body",
+                    "properties": {},
+                    "children": [],
+                    "loc": {
+                        "start": {
+                            "line": 1,
+                            "column": 0
+                        },
+                        "end": {
+                            "line": 2,
+                            "column": 0
+                        }
+                    },
+                    "range": [
+                        0,
+                        11
+                    ],
+                    "raw": "<!doctype>\n"
+                }
+            ],
             "loc": {
                 "start": {
                     "line": 1,
-                    "column": 10
+                    "column": 0
                 },
                 "end": {
                     "line": 2,
@@ -35,12 +90,27 @@
                 }
             },
             "range": [
-                10,
+                0,
                 11
             ],
-            "raw": "\n"
+            "raw": "<!doctype>\n"
         }
     ],
+    "data": {
+        "quirksMode": true
+    },
+    "position": {
+        "start": {
+            "line": 1,
+            "column": 1,
+            "offset": 0
+        },
+        "end": {
+            "line": 2,
+            "column": 1,
+            "offset": 11
+        }
+    },
     "loc": {
         "start": {
             "line": 1,
