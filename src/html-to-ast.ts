@@ -10,17 +10,17 @@ import { Element } from "hast";
 /**
  * Remove undocumented properties on TxtNode from node
  */
-function removeUnusedProperties(node: Element) {
-    if (typeof node !== "object") {
-        return;
-    }
-    ["position"].forEach(function (key) {
-        if (node.hasOwnProperty(key)) {
-            // @ts-expect-error: delete key
-            delete node[key];
-        }
-    });
-}
+// function removeUnusedProperties(node: Element) {
+//     if (typeof node !== "object") {
+//         return;
+//     }
+//     ["position"].forEach(function (key) {
+//         if (node.hasOwnProperty(key)) {
+//             // @ts-expect-error: delete key
+//             delete node[key];
+//         }
+//     });
+// }
 
 function mapNodeType(node: Element, parent: TraverseContext | undefined) {
     if (parent) {
@@ -53,8 +53,22 @@ export function parse(html: string) {
     const ast = parseHtml.parse(html);
     const src = new StructuredSource(html);
     const tr = traverse(ast);
+    const getNearParentWithPosition = (context: TraverseContext): Element | undefined => {
+        if ("position" in context.node) {
+            return context.node;
+        }
+        if (context.parent) {
+            return getNearParentWithPosition(context.parent);
+        }
+        return;
+    }
     tr.forEach(function (node) {
-        if (this.notLeaf) {
+
+        if (typeof node === "object" && !Array.isArray(node)) {
+            // it is not leaf node
+            if (!("type" in node)) {
+                return;
+            }
             // avoid conflict <input type="text" />
             // AST node has type and position
             if (node.type && node.position) {
@@ -70,20 +84,35 @@ export function parse(html: string) {
                     end: { line: position.end.line, column: position.end.column + 1 }
                 };
             }
-            // Unknown type
-            if (typeof node.type === "undefined") {
-                node.type = "UNKNOWN";
-            }
             // map `range`, `loc` and `raw` to node
             if (typeof node.position === "object") {
-                let position = node.position;
+                const position = node.position;
                 // TxtNode's line start with 1
                 // TxtNode's column start with 0
-                let positionCompensated = {
+                const positionCompensated = {
                     start: { line: position.start.line, column: position.start.column - 1 },
                     end: { line: position.end.line, column: position.end.column - 1 }
-                };
-                let range = src.locationToRange(positionCompensated);
+                } as const;
+                const range = src.locationToRange(positionCompensated);
+                node.loc = positionCompensated;
+                node.range = range;
+                node.raw = html.slice(range[0], range[1]);
+            } else if (this.parent?.node) {
+                const parentNode = getNearParentWithPosition(this.parent);
+                if (!parentNode) {
+                    return;
+                }
+                const position = parentNode.position;
+                if (!position) {
+                    return;
+                }
+                // TxtNode's line start with 1
+                // TxtNode's column start with 0
+                const positionCompensated = {
+                    start: { line: position.start.line, column: position.start.column - 1 },
+                    end: { line: position.end.line, column: position.end.column - 1 }
+                } as const;
+                const range = src.locationToRange(positionCompensated);
                 node.loc = positionCompensated;
                 node.range = range;
                 node.raw = html.slice(range[0], range[1]);
@@ -93,7 +122,7 @@ export function parse(html: string) {
                 node.url = node.properties.href;
             }
         }
-        removeUnusedProperties(node);
+        // removeUnusedProperties(node);
     });
     return ast as any as TxtParentNode;
 }
