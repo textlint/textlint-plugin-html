@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "textlint test/ -f pretty-error || exit 0"
+  },
+  "workspaces": [
+    "../"
+  ],
+  "author": "azu",
+  "license": "MIT",
+  "devDependencies": {
+    "textlint": "^13.0.5",
+    "textlint-rule-preset-ja-technical-writing": "^7.0.0",
+    "textlint-plugin-html": "^0.3.0"
+  }
+}

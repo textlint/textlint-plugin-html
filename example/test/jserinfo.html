@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title translate="no">2023-01-24のJS: Bun v0.5、Remix v1.11.0、メモリリークの調査 - JSer.info</title>
+    <meta name="description" content="JSer.info #628 - Bun v0.5がリリースされました。">
+    
+    <meta name="keywords" content="performance,node.js,Bun,rlee,Next.js">
+    
+    <meta name="author" content="azu">
+    <link href="https://github.com/jser" rel="me">
+    <link href="https://twitter.com/azu_re" rel="me">
+    <link href="https://twitter.com/jser_info" rel="me">
+    <link href="https://mstdn.jp/@azu_re" rel="me">
+    <link href="https://mstdn.jp/@jser" rel="me">
+    
+    <meta content="2023-01-24T22:23:07+09:00" property="article:published_time">
+    <meta content="https://jser.info/about/" property="article:author">
+    
+    
+      
+      <meta content="JSer" property="article:section">
+      
+    
+    
+      
+      <meta content="performance" property="article:tag">
+      
+      <meta content="node.js" property="article:tag">
+      
+      <meta content="Bun" property="article:tag">
+      
+      <meta content="rlee" property="article:tag">
+      
+      <meta content="Next.js" property="article:tag">
+      
+    
+
+    
+    <link rel="canonical" href="https://jser.info/2023/01/24/bun-v0.5-remix-v1.11.0/">
+    <link rel="alternate" type="application/rss+xml" title="RSS" href="https://jser.info/rss/">
+    <link rel="apple-touch-icon" sizes="57x57" href="https://jser.info/public/img/favicon/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="https://jser.info/public/img/favicon/apple-touch-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="https://jser.info/public/img/favicon/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="https://jser.info/public/img/favicon/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="https://jser.info/public/img/favicon/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="https://jser.info/public/img/favicon/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="https://jser.info/public/img/favicon/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="https://jser.info/public/img/favicon/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="https://jser.info/public/img/favicon/apple-touch-icon-180x180.png">
+    <link rel="icon" type="image/png" href="https://jser.info/public/img/favicon/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png" href="https://jser.info/public/img/favicon/android-chrome-192x192.png" sizes="192x192">
+    <link rel="icon" type="image/png" href="https://jser.info/public/img/favicon/favicon-96x96.png" sizes="96x96">
+    <link rel="icon" type="image/png" href="https://jser.info/public/img/favicon/favicon-16x16.png" sizes="16x16">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-TileImage" content="/public/img/favicon/mstile-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <!-- Preload Hero Images: Improves LCP-->
+    <link rel="preload" as="image" href="index_files/logo.png">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index_files/index.css">
+    <!-- JavaScript -->
+    <script async="" src="index_files/bookmark_button_wo_al.js"></script><script async="" src="index_files/widgets.js"></script><script async="" src="index_files/btn.js"></script><script src="index_files/switch-alt-link.js" async="" defer="defer"></script>
+    <!-- Open graph tags -->
+<meta name="twitter:card" content="JSer.info #628 - Bun v0.5がリリースされました。">
+<meta name="twitter:site" content="@jser_info">
+
+
+<meta property="og:title" content="2023-01-24のJS: Bun v0.5、Remix v1.11.0、メモリリークの調査">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://jser.info/2023/01/24/bun-v0.5-remix-v1.11.0/">
+<meta property="og:image" content="https://jser.info/media/logo.png">
+
+<meta property="og:description" content="JSer.info #628 - Bun v0.5がリリースされました。">
+<meta property="og:site_name" content="JSer.info">
+
+
+
+<meta property="article:published_time" content="2023-01-24T22:23:07+09:00">
+
+<meta property="og:see_also" content="https://jser.info/2023/01/18/flow-v0.197.0local-type-inference-fetch-api/">
+
+<meta property="og:see_also" content="https://jser.info/2023/01/16/jser-12th/">
+
+<meta property="og:see_also" content="https://jser.info/2023/01/13/remix-1.10.0-react-native-0.71-state-of-js-2022/">
+
+
+
+
+
+<meta property="article:tag" content="performance">
+
+<meta property="article:tag" content="node.js">
+
+<meta property="article:tag" content="Bun">
+
+<meta property="article:tag" content="rlee">
+
+<meta property="article:tag" content="Next.js">
+
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+<script async="" src="index_files/js"></script>
+<script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-Q66PHF829Y');
+</script>
+
+<script charset="utf-8" src="index_files/button.e7f9415a2e000feaab02c86dd5802747.js"></script></head>
+
+
+<body class="vsc-initialized">
+<header>
+    <a href="https://github.com/jser/jser.github.io" class="github-ribbon">
+        <img style="position: absolute; top: 0; right: 0; border: 0;" src="index_files/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875.png" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png">
+    </a>
+    <div class="global-header">
+    <h1 class="site-title"><a href="https://jser.info/" title="JSer.info">
+        <!-- 3:1 aspect ratio-->
+        <img alt="" src="index_files/logo.png" width="518" height="172"></a></h1>
+    <h2 class="site-description">JavaScriptの最新情報を紹介する週刊ブログ</h2>
+    <nav class="lang-menu">
+        <ul>
+            <li><a href="https://jser.info/2023/01/24/bun-v0.5-remix-v1.11.0/" data-alt-href="/2023/01/24/bun-v0.5-remix-v1.11.0/">日本語</a></li>
+            <li><a href="https://jser.info/ko/" data-alt-href="/ko/2023/01/24/bun-v0.5-remix-v1.11.0/">한국어</a></li>
+        </ul>
+        
+        <div>
+            <p>リアルタイム版は<a href="https://realtime.jser.info/" title="Realtime JSer.info">Realtime JSer.info</a></p>
+        </div>
+        
+    </nav>
+</div>
+
+</header>
+<div class="content-wrapper">
+    <article>
+        <div class="page-content">
+            <div class="post">
+    <header>
+        <div class="post-header">
+            <h1><a href="https://jser.info/2023/01/24/bun-v0.5-remix-v1.11.0/">2023-01-24のJS: Bun v0.5、Remix v1.11.0、メモリリークの調査</a></h1>
+
+            <div class="pre-post-toolbar">
+                <span class="post-date">2023年01月24日</span>
+                
+                <span class="svg-icon"><img src="index_files/github.svg" alt=""></span>
+                <a class="btn edit-on-github" href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ja/_posts/2023/2023-01-24-bun-v0.5-remix-v1.11.0-.md"><span class="edit-on-github-label"></span>Edit on GitHub</a>
+                <span class="svg-icon"><img src="index_files/git.svg" alt=""></span>
+                <a class="btn revision-on-github" href="https://github.com/jser/jser.github.io/commits/develop/_i18n/ja/_posts/2023/2023-01-24-bun-v0.5-remix-v1.11.0-.md"><span class="revision-on-github-label"></span>編集履歴を見る</a>
+            </div>
+
+        </div>
+        <div class="social-buttons">
+            <ul>
+    <!-- Feedly -->
+    
+    <!-- Twitter -->
+    <li class="twitter-button-item">
+        <iframe id="twitter-widget-0" scrolling="no" allowtransparency="true" allowfullscreen="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button notranslate" style="position: static; visibility: visible; width: 89px; height: 20px;" title="Twitter Tweet Button" src="index_files/tweet_button.html" frameborder="0"></iframe>
+    </li>
+    
+    <!-- Hatena -->
+    <li>
+        <iframe class="hatena-bookmark-button-frame notranslate" title="" scrolling="no" src="javascript:false" style="width: 115px; height: 20px;" width="115" height="20" frameborder="0"></iframe>
+    </li>
+    
+    <!-- Pocket -->
+    <li>
+        <div class="pocket-btn"><iframe id="pocket-button-0" allowtransparency="true" scrolling="NO" src="index_files/button.html" class="notranslate" width="135" height="22" frameborder="0"></iframe></div>
+    </li>
+</ul>
+
+        </div>
+    </header>
+    <article class="post-content">
+        <p>JSer.info #628 - Bun v0.5がリリースされました。</p>
+
+<ul>
+<li><a href="https://bun.sh/blog/bun-v0.5.0">Bun v0.5 | Bun Blog</a></li>
+</ul>
+
+<p><code>package.json</code>の<code>workspaces</code>を使ったインストールをサポートしています。<br>
+Node.jsとの互換性として<code>node:dns</code>、<code>node:tls</code>、<code>node:net</code>、<code>node:readline</code>のサポートが追加されています。<br>
+また、モジュール解決時の識別子の優先度の変更なども含まれています。</p>
+
+<hr>
+
+<p>Remix v1.11.0がリリースされました。</p>
+
+<ul>
+<li><a href="https://github.com/remix-run/remix/releases/tag/remix%401.11.0">Release v1.11.0 · remix-run/remix</a></li>
+</ul>
+
+<p><code>defer</code>を使ってレスポンス待ちを減らせるように、<code>@remix-run/css-bundle</code>でのCSSファイルのロード、CSS Modules、Vanilla Extractのサポートが追加されています。<br>
+また、Remix v2で導入予定のFlat Routesをopt-inで利用できるようになっています。</p>
+
+<ul>
+<li><a href="https://github.com/remix-run/remix/discussions/4482">Flat Routes · Discussion #4482 · remix-run/remix</a></li>
+</ul>
+
+<hr>
+
+<p><a href="https://kentcdodds.com/blog/fixing-a-memory-leak-in-a-production-node-js-app">Fixing a Memory Leak in a Production Node.js App</a>という記事と動画では、Node.jsのウェブアプリケーションで発生したメモリリークの原因を調査し、どのように修正していったかについて書かれています。</p>
+
+<iframe src="index_files/vkys6Wk-jYk.html" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="" class="notranslate" width="560" height="315" frameborder="0"></iframe>
+
+<p>動画でのライブデバッグでは、Node.jsのMemory Profilter(Chrome DevTools)を使いメモリリークの原因をデバッグしています。<br>
+heap snapshotsをつかったメモリリークのデバッグや<a href="https://www.npmjs.com/package/autocannon">autocannon</a>というHTTPベンチマークツールを使い継続的にリクエストを送って状況を再現させる方法などを紹介しています。</p>
+
+<hr>
+
+<h3 class="inline-support">JSer.infoをサポートするには</h3>
+
+<ul>
+    <li>😘 知り合いにJSer.infoをおすすめする</li>
+    <li>💸 GitHub Sponsorsで<a href="https://github.com/sponsors/azu">@azuのスポンサー</a>になる</li>
+    <li>🐦 Twitterで<a href="https://twitter.com/jser_info">@jser_info</a>をフォローする</li>
+    <li>🔁 <a href="https://twitter.com/search?q=from%3Aazu_re%20jser.info&amp;src=typed_query&amp;f=live">JSer.infoについての最新のTweet</a>をRetweetする</li>
+</ul>
+
+<hr>
+
+<h1 class="site-genre">ヘッドライン</h1>
+
+<hr>
+
+<h2 id="bun-v0-5-bun-blog">Bun v0.5 | Bun Blog</h2>
+
+<p><a href="https://bun.sh/blog/bun-v0.5.0" title="Bun v0.5 | Bun Blog">bun.sh/blog/bun-v0.5.0</a><br>
+</p><p class="jser-tags jser-tag-icon"><span class="jser-tag">Bun</span> <span class="jser-tag">rlee</span></p><p></p>
+
+<p>Bun 0.5.0リリース。<br>
+<code>workspaces</code>のインストールをサポート。<br>
+Node.jsとの互換性として<code>node:dns</code>、<code>node:tls</code>、<code>node:net</code>、<code>node:readline</code>のサポート。<br>
+モジュール解決時の識別子の優先度を変更など</p>
+
+<hr>
+
+<h2 id="release-v2-0-0-alpha-1-reduxjs-redux-toolkit">Release v2.0.0-alpha.1 · reduxjs/redux-toolkit</h2>
+
+<p><a href="https://github.com/reduxjs/redux-toolkit/releases/tag/v2.0.0-alpha.1" title="Release v2.0.0-alpha.1 · reduxjs/redux-toolkit">github.com/reduxjs/redux-toolkit/releases/tag/v2.0.0-alpha.1</a><br>
+</p><p class="jser-tags jser-tag-icon"><span class="jser-tag">library</span> <span class="jser-tag">redux</span> <span class="jser-tag">ReleaseNote</span></p><p></p>
+
+<p>Redux Toolkit v2.0.0-alpha.1リリース。<br>
+ESM形式とCJS形式のDual Packageへの変更、<code>thunk</code>関数を<code>redux-thunk</code>パッケージへ移動。<br>
+v2正式版にはImmer 10を含める予定など</p>
+
+<ul>
+<li><a href="https://github.com/immerjs/immer/issues/1015" title="Immer 10 proposals: Drop promises, default export, array.length patches, ES5 mode, and make getter / setter support opt-in · Issue #1015 · immerjs/immer">Immer
+ 10 proposals: Drop promises, default export, array.length patches, ES5 
+mode, and make getter / setter support opt-in · Issue #1015 · 
+immerjs/immer</a></li>
+</ul>
+
+<hr>
+
+<h2 id="q1-roadmap-issue-17475-denoland-deno">Q1 Roadmap · Issue #17475 · denoland/deno</h2>
+
+<p><a href="https://github.com/denoland/deno/issues/17475" title="Q1 Roadmap · Issue #17475 · denoland/deno">github.com/denoland/deno/issues/17475</a><br>
+</p><p class="jser-tags jser-tag-icon"><span class="jser-tag">deno</span> <span class="jser-tag">issue</span> <span class="jser-tag">proposal</span></p><p></p>
+
+<p>Denoの2023 Q1のロードマップ。<br>
+<code>deno.json</code>に直接import mapを埋め込めるように、<code>type=module</code>の<code>package.json</code>をサポート、<code>node:</code> prefixのサポート。<br>
+deno.land/x での semver指定のサポート、<code>deno bundle</code>をDeprecateにし、<code>deno pack</code>の追加など</p>
+
+<hr>
+
+<h2 id="safari-16-3-release-notes-apple-developer-documentation">Safari 16.3 Release Notes | Apple Developer Documentation</h2>
+
+<p><a href="https://developer.apple.com/documentation/safari-release-notes/safari-16_3-release-notes" title="Safari 16.3 Release Notes | Apple Developer Documentation">developer.apple.com/documentation/safari-release-notes/safari-16_3-release-notes</a><br>
+</p><p class="jser-tags jser-tag-icon"><span class="jser-tag">safari</span> <span class="jser-tag">ReleaseNote</span></p><p></p>
+
+<p>Safari 16.3リリース。<br>
+<code>fetch()</code>で<code>Content-Encoding: gzip</code>のコンテンツをダウンロードしたとき問題を修正、<code>Cross-Origin-Embedder-Policy</code>のバグを修正。<br>
+CSPに<code>prefetch-src</code>ディレクティブの追加など</p>
+
+<ul>
+<li><a href="https://webkit.org/blog/13691/webkit-features-in-safari-16-3/" title="WebKit Features in Safari 16.3 | WebKit">WebKit Features in Safari 16.3 | WebKit</a></li>
+</ul>
+
+<hr>
+
+<h2 id="release-v29-4-0-facebook-jest">Release v29.4.0 · facebook/jest</h2>
+
+<p><a href="https://github.com/facebook/jest/releases/tag/v29.4.0" title="Release v29.4.0 · facebook/jest">github.com/facebook/jest/releases/tag/v29.4.0</a><br>
+</p><p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">jest</span> <span class="jser-tag">ReleaseNote</span></p><p></p>
+
+<p>Jest v29.4.0リリース。<br>
+<code>equal</code>のアルゴリズムをカスタマイズできる<code>expect.addEqualityTesters()</code>の追加、オブジェクトのプロパティをモックする<code>jest.replaceProperty()</code>の追加など</p>
+
+<hr>
+
+<h2 id="release-v1-11-0-remix-run-remix">Release v1.11.0 · remix-run/remix</h2>
+
+<p><a href="https://github.com/remix-run/remix/releases/tag/remix%401.11.0" title="Release v1.11.0 · remix-run/remix">github.com/remix-run/remix/releases/tag/remix%401.11.0</a><br>
+</p><p class="jser-tags jser-tag-icon"><span class="jser-tag">Remix</span> <span class="jser-tag">ReleaseNote</span></p><p></p>
+
+<p>Remix 1.11.0リリース。<br>
+<code>defer</code>を使ってレスポンス待ちを減らせるように、<code>@remix-run/css-bundle</code>でのCSSファイルのロード、CSS Modules、Vanilla Extractのサポート。<br>
+Flat Routesをopt-inで利用できるように</p>
+
+<ul>
+<li><a href="https://github.com/remix-run/remix/discussions/4482" title="Flat Routes · Discussion #4482 · remix-run/remix">Flat Routes · Discussion #4482 · remix-run/remix</a></li>
+</ul>
+
+<hr>
+
+<h1 class="site-genre">アーティクル</h1>
+
+<hr>
+
+<h2 id="next-js-100">Next.js製アプリケーションのコンパイルを約100倍高速化した話</h2>
+
+<p><a href="https://zenn.dev/mkt/articles/543669021d9a1e" title="Next.js製アプリケーションのコンパイルを約100倍高速化した話">zenn.dev/mkt/articles/543669021d9a1e</a><br>
+</p><p class="jser-tags jser-tag-icon"><span class="jser-tag">Next.js</span> <span class="jser-tag">article</span> <span class="jser-tag">performance</span></p><p></p>
+
+<p>Next.jsのビルド速度の問題を<code>.next/trace</code>のトレースデータを見て分析する方法について</p>
+
+<ul>
+<li><a href="https://github.com/vercel/next.js/issues/29559#issuecomment-938431883" title="NextJs compiling extremely slow · Issue #29559 · vercel/next.js">NextJs compiling extremely slow · Issue #29559 · vercel/next.js</a></li>
+</ul>
+
+<hr>
+
+<h2 id="why-not-document-write-css-wizardry-web-performance-optimisation">Why Not document.write()? – CSS Wizardry – Web Performance Optimisation</h2>
+
+<p><a href="https://csswizardry.com/2023/01/why-not-document-write/" title="Why Not document.write()? – CSS Wizardry – Web Performance Optimisation">csswizardry.com/2023/01/why-not-document-write/</a><br>
+</p><p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">article</span> <span class="jser-tag">performance</span></p><p></p>
+
+<p><code>document.write()</code>がなぜ遅いかについて。</p>
+
+<hr>
+
+<h2 id="why-is-my-jest-test-suite-so-slow-by-steven-lemon-jan-2023-bits-and-pieces">Why Is My Jest Test Suite So Slow? | by Steven Lemon | Jan, 2023 | Bits and Pieces</h2>
+
+<p><a href="https://blog.bitsrc.io/why-is-my-jest-suite-so-slow-2a4859bb9ac0" title="Why Is My Jest Test Suite So Slow? | by Steven Lemon | Jan, 2023 | Bits and Pieces">blog.bitsrc.io/why-is-my-jest-suite-so-slow-2a4859bb9ac0</a><br>
+</p><p class="jser-tags jser-tag-icon"><span class="jser-tag">JavaScript</span> <span class="jser-tag">testing</span> <span class="jser-tag">article</span> <span class="jser-tag">performance</span></p><p></p>
+
+<p>Jestのテストのパフォーマンスのボトルネックの調べ方について。<br>
+起動時間、<code>jsdom</code>のロード、キャッシュ、テストファイルのロード、実際のテストの実行時間について。<br>
+Node.jsのプロファイラーを使ってどこに問題があるかを調べる方法について</p>
+
+<hr>
+
+<h2 id="fixing-a-memory-leak-in-a-production-node-js-app">Fixing a Memory Leak in a Production Node.js App</h2>
+
+<p><a href="https://kentcdodds.com/blog/fixing-a-memory-leak-in-a-production-node-js-app" title="Fixing a Memory Leak in a Production Node.js App">kentcdodds.com/blog/fixing-a-memory-leak-in-a-production-node-js-app</a><br>
+</p><p class="jser-tags jser-tag-icon"><span class="jser-tag">node.js</span> <span class="jser-tag">JavaScript</span> <span class="jser-tag">debug</span> <span class="jser-tag">article</span> <span class="jser-tag">video</span></p><p></p>
+
+<p>Node.jsのアプリケーションでメモリリークが発生し、実際にどのようにデバッグして問題を見つけていったかという記事。<br>
+動画では<code>shiki</code>が使う<code>vscode-oniguruma</code>のメモリ解放処理を呼んでいないことが原因だと判断し、Workerで処理するように変更した。<br>
+しかし、実際には<code>express-http-proxy</code>がリクエストURLを保持していて、Image CDNのURLが長いためメモリを圧迫していた。</p>
+
+<hr>
+
+<h2 id="sssvg-an-interactive-svg-reference-fffuel">SSSVG: An Interactive SVG Reference | fffuel</h2>
+
+<p><a href="https://fffuel.co/sssvg/" title="SSSVG: An Interactive SVG Reference | fffuel">fffuel.co/sssvg/</a><br>
+</p><p class="jser-tags jser-tag-icon"><span class="jser-tag">SVG</span> <span class="jser-tag">tutorial</span></p><p></p>
+
+<p>実際に触りながらSVGのタグを見れるリファレンスサイト</p>
+
+<hr>
+
+<h2 id="optimize-time-to-first-byte">Optimize Time to First Byte</h2>
+
+<p><a href="https://web.dev/optimize-ttfb/" title="Optimize Time to First Byte">web.dev/optimize-ttfb/</a><br>
+</p><p class="jser-tags jser-tag-icon"><span class="jser-tag">performance</span> <span class="jser-tag">browser</span> <span class="jser-tag">article</span></p><p></p>
+
+<p>Time to First Byte (TTFB)の改善について。<br>
+<code>Serving-Timing</code>ヘッダを使い詳細化、CDNの利用、ページのリダイレクトを避ける、SSR時にStreaming Server Renderingを行う。<br>
+Service Workerを使ったキャッシュ戦略、103 Early Hintsについてなど</p>
+
+<hr>
+
+<h1 class="site-genre">サイト、サービス、ドキュメント</h1>
+
+<hr>
+
+<h2 id="amandaghassaei-gpu-io-a-gpu-accelerated-computing-library-for-physics-simulations-and-other-mathematical-calculations">amandaghassaei/gpu-io: A GPU-accelerated computing library for physics simulations and other mathematical calculations</h2>
+
+<p><a href="https://github.com/amandaghassaei/gpu-io" title="amandaghassaei/gpu-io: A GPU-accelerated computing library for physics simulations and other mathematical calculations">github.com/amandaghassaei/gpu-io</a><br>
+</p><p class="jser-tags jser-tag-icon"><span class="jser-tag">WebGL</span> <span class="jser-tag">JavaScript</span> <span class="jser-tag">library</span></p><p></p>
+
+<p>WebGLを使ったGPU処理を扱うライブラリ</p>
+
+<hr>
+
+<h1 class="site-genre">ソフトウェア、ツール、ライブラリ関係</h1>
+
+<hr>
+
+<h2 id="brooooooklyn-canvas-high-performance-skia-binding-to-node-js-zero-system-dependencies-and-pure-npm-packages-without-any-postinstall-scripts-nor-node-gyp">Brooooooklyn/canvas:
+ High performance skia binding to Node.js. Zero system dependencies and 
+pure npm packages without any postinstall scripts nor node-gyp.</h2>
+
+<p><a href="https://github.com/Brooooooklyn/canvas" title="Brooooooklyn/canvas: High performance skia binding to Node.js. Zero system dependencies and pure npm packages without any postinstall scripts nor node-gyp.">github.com/Brooooooklyn/canvas</a><br>
+</p><p class="jser-tags jser-tag-icon"><span class="jser-tag">node.js</span> <span class="jser-tag">canvas</span> <span class="jser-tag">library</span></p><p></p>
+
+<p>native addonsを使ったskia backendのCanvas APIの実装ライブラリ。<br>
+アーキテクチャに合わせたoptionalDependenciesでprebuildのSkiaを含めたバイナリがダウンロードされるため、システムに対して事前に依存をインストールを追加する必要がない</p>
+
+<hr>
+
+    </article>
+
+    <div class="post-post-toolbar">
+        <span class="svg-icon"><img src="index_files/github.svg" alt=""></span>
+        <a class="btn edit-on-github" href="https://github.com/jser/jser.github.io/edit/develop/_i18n/ja/_posts/2023/2023-01-24-bun-v0.5-remix-v1.11.0-.md"><span class="edit-on-github-label"></span>この記事へ修正リクエストをする</a>
+        <nav>
+            <span class="svg-icon"><img src="index_files/slack.svg" alt=""></span>
+            <a class="btn" href="https://join.slack.com/t/jserinfo/shared_invite/zt-g2shzp7o-f_tj6OaphCAFw5Qlt2Jw0A"><span class="join-to-slack"></span>JSer.info Slackに参加する</a>
+        </nav>
+        
+        <nav>
+            <span class="svg-icon"><img src="index_files/favorite.svg" alt=""></span>
+            <span>JSer.infoへ記事を紹介したい場合は<a href="https://jser.info/support/">Pingで紹介</a></span>
+        </nav>
+        
+        <nav class="tags" id="js-post-tags" data-post-tags="[&quot;performance&quot;,&quot;node.js&quot;,&quot;Bun&quot;,&quot;rlee&quot;,&quot;Next.js&quot;]">
+            <span><span class="svg-icon"><img src="index_files/tag.svg" alt=""></span>タグ:</span>
+            <ul>
+                
+                <li>performance</li>
+                
+                <li>node.js</li>
+                
+                <li>Bun</li>
+                
+                <li>rlee</li>
+                
+                <li>Next.js</li>
+                
+            </ul>
+        </nav>
+    </div>
+</div>
+<div class="social-buttons post-content">
+    <ul>
+    <!-- Feedly -->
+    
+    <!-- Twitter -->
+    <li class="twitter-button-item">
+        <iframe id="twitter-widget-1" scrolling="no" allowtransparency="true" allowfullscreen="true" class="twitter-share-button twitter-share-button-rendered twitter-tweet-button notranslate" style="position: static; visibility: visible; width: 89px; height: 20px;" title="Twitter Tweet Button" src="index_files/tweet_button_002.html" frameborder="0"></iframe>
+    </li>
+    
+    <!-- Hatena -->
+    <li>
+        <iframe class="hatena-bookmark-button-frame notranslate" title="" scrolling="no" src="javascript:false" style="width: 115px; height: 20px;" width="115" height="20" frameborder="0"></iframe>
+    </li>
+    
+    <!-- Pocket -->
+    <li>
+        <div class="pocket-btn"><iframe id="pocket-button-1" allowtransparency="true" scrolling="NO" src="index_files/button_002.html" class="notranslate" width="135" height="22" frameborder="0"></iframe></div>
+    </li>
+</ul>
+
+
+    <iframe src="index_files/card.html" title="Sponsor azu" style="border: 0;" loading="lazy" class="notranslate" width="600" height="200"></iframe>
+</div>
+<div class="disqus-embed" id="js-disqus-embed">
+    <button class="comment-button" id="js-comment-button">コメントを表示</button>
+</div>
+<script async="" type="text/javascript" src="index_files/show-disqus.js"></script>
+<script>
+    (function (w, d) {
+        var s, e = d.getElementsByTagName("script")[0],
+            a = function (u, f) {
+                if (!d.getElementById(f)) {
+                    s = d.createElement("script");
+                    s.async = true;
+                    s.src = u;
+                    e.parentNode.insertBefore(s, e);
+                }
+            };
+        a("https://b.st-hatena.com/js/bookmark_button_wo_al.js");
+        a("https://platform.twitter.com/widgets.js");
+        a("https://widgets.getpocket.com/v1/j/btn.js?v=1");
+    })(window, document);
+</script>
+<div class="social-buttons post-content">
+    <h3 class="sponsors-title">JSer.info Sponsors</h3>
+
+<p class="sponsors-description">
+
+    <b>JSer.info Sponsors</b>は<a href="https://github.com/sponsors/azu" aria-label="Sponsor @azu on GitHub">GitHub Sponsors</a>としてJSer.infoを支援してくれているひとたちです。
+
+</p>
+<div class="sponsors-list">
+    <!-- Sponsor for https://github.com/sponsors/azu -->
+    <div class="sponsors-listItem">
+        <a href="https://twitter.com/cybozu" title="Cybozu, Inc." target="_blank" rel="noopener">
+            <img src="index_files/76428554.png" alt="" loading="lazy" width="64" height="64">
+        </a>
+    </div>
+</div>
+
+</div>
+
+        </div>
+    </article>
+    <aside>
+        <div class="page-sidebar">
+    <div class="profile">
+        <a href="https://twitter.com/azu_re" title="Twitter: azu_re">
+            <img src="index_files/azu.png" alt=""></a>
+
+        <h2><a href="https://twitter.com/azu_re">azu</a></h2>
+    </div>
+    
+    <div class="social-icons">
+        <a class="social-icon__twitter" href="https://twitter.com/jser_info" title="Twitter">
+            <img src="index_files/twitter.svg" alt="" loading="lazy" width="28" height="28">
+        </a>
+        <a class="social-icon__github" href="https://github.com/jser" title="GitHub">
+            <img src="index_files/github.svg" alt="" loading="lazy" width="28" height="28">
+        </a>
+        <a class="social-icon__rss" href="https://jser.info/rss/" title="RSS Feed">
+            <img src="index_files/feed.svg" alt="" loading="lazy" width="28" height="28">
+        </a>
+        <a class="social-icon__feedly" href="https://feedly.com/i/subscription/feed%2Fhttps://jser.info/rss/" target="blank">
+            <img id="feedlyFollow" src="index_files/feedly-follow-square-flat-green_2x.png" alt="" loading="lazy" width="28" height="28">
+        </a>
+    </div>
+    
+    <div class="slack-bar">
+        <details>
+            <summary><img src="index_files/slack.svg" alt="" loading="lazy" width="50" height="50"><span>SlackでJSer.infoを購読する</span></summary>
+            <p>次のコマンドをSlackのチャンネルで実行すると、JSer.infoのRSSフィードを購読できます</p>
+
+            <pre><code class="notranslate">/feed subscribe https://jser.info/rss/</code></pre>
+
+            <p><button id="js-slack-command-button">Copy</button></p>
+            <p><a href="https://get.slack.help/hc/ja/articles/218688467-Slack-%E3%81%AB-RSS-%E3%83%95%E3%82%A3%E3%83%BC%E3%83%89%E3%82%92%E8%BF%BD%E5%8A%A0%E3%81%99%E3%82%8B" target="blank">
+                    📝 Slack に RSS フィードを追加する
+                </a>
+            </p>
+        </details>
+    </div>
+    <script async="" type="module">
+        const copyButtonLabel = "Copy";
+        const codeBlock = document.querySelector(".slack-bar pre");
+        const button = document.querySelector("#js-slack-command-button");
+        if (navigator.clipboard) {
+            button.addEventListener("click", async () => {
+                await copyCode(codeBlock, button);
+            });
+        }
+        async function copyCode(block, button) {
+            const code = block.querySelector("code");
+            const text = code.textContent;
+            await navigator.clipboard.writeText(text);
+            // visual feedback that task is completed
+            button.innerText = "Copied";
+            setTimeout(() => {
+                button.innerText = copyButtonLabel;
+            }, 1000);
+        }
+    </script>
+    
+    <nav>
+        <div class="search-bar">
+            <div class="search-and-submit">
+                <form class="search-box" method="get" action="https://www.google.co.jp/search">
+                    <input type="search" name="q" placeholder="Enter Search">
+                    <input type="hidden" name="q" value="site:jser.info">
+                    <button type="submit">
+                        <span class="drawic drawic-search"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+        <div class="side-menu">
+            <h1>ページ</h1>
+            <ul>
+                <li><a class="page-link" href="https://jser.info/about/">JSer.infoについて</a></li>
+                <li><a class="page-link" href="https://jser.info/support/">Support</a></li>
+                <li><span></span></li>
+                <script async="" defer="defer" src="index_files/buttons.js"></script>
+            </ul>
+        </div>
+        <div class="side-menu">
+            <h1>最近の投稿</h1>
+            <ul>
+                
+                
+                <li><a class="page-link" href="https://jser.info/2023/01/24/bun-v0.5-remix-v1.11.0/">2023-01-24のJS: Bun v0.5、Remix v1.11.0、メモリリークの調査</a></li>
+                
+                
+                
+                <li><a class="page-link" href="https://jser.info/2023/01/18/flow-v0.197.0local-type-inference-fetch-api/">2023-01-18のJS: Flow v0.197.0(Local Type Inference)、Fetch APIのエラーハンドリング</a></li>
+                
+                
+                
+                <li><a class="page-link" href="https://jser.info/2023/01/16/jser-12th/">JSer.info 12周年です</a></li>
+                
+                
+                
+                <li><a class="page-link" href="https://jser.info/2023/01/13/remix-1.10.0-react-native-0.71-state-of-js-2022/">2023-01-13のJS: Remix 1.10.0、React Native 0.71、State of JS 2022</a></li>
+                
+                
+                
+                <li><a class="page-link" href="https://jser.info/2023/01/06/vue-2eol2023-nextauthauth.js-react-nativefirst-class-support-for-typescript/">2023-01-06のJS:  Vue 2のEOLは2023年末、NextAuthはAuth.jsに、React NativeのFirst-class Support for TypeScript</a></li>
+                
+                
+                
+                <li><a class="page-link" href="https://jser.info/2022/12/28/next.js-13.1-http3-prioritization-deno-1.29-bun-0.4/">2022-12-28のJS: Next.js 13.1、HTTP/3 Prioritizationの仕組み、Deno 1.29、Bun 0.4</a></li>
+                
+                
+                
+                <li><a class="page-link" href="https://jser.info/2022/12/20/vite-4.0-sveltekit-1.0-node-v19.3.0npm-9-rum-archive/">2022-12-20のJS: Vite 4.0、SvelteKit 1.0、Node v19.3.0(npm 9)、RUM Archive</a></li>
+                
+                
+                
+                <li><a class="page-link" href="https://jser.info/2022/12/13/bun-0.3.0-swr-2.0-civetcoffeescript-of-typescript/">2022-12-13のJS: Bun 0.3.0、SWR 2.0、Civet(CoffeeScript of TypeScript)</a></li>
+                
+                
+            </ul>
+        </div>
+    </nav>
+</div>
+    </aside>
+</div>
+<footer>
+    <div class="page-footer">
+    <div class="copyright-footer">
+        <div class="copyright">
+            <p>JSer.info is maintained by @<a href="https://twitter.com/azu_re" title="azu (azu_re) on Twitter">azu_re</a>.
+            </p>
+        </div>
+        <div class="cc-license">
+            <a rel="license" href="https://creativecommons.org/licenses/by/4.0/">
+                <img alt="Creative commons LICENSE" style="border-width:0" src="index_files/88x31.png" loading="lazy" width="88" height="31"></a>
+        </div>
+    </div>
+</div>
+
+</footer>
+<style>
+    @media screen and (max-width: 1000px) and (max-height: 800px) {
+        .ping-show-button {
+            display: none !important;
+        }
+    }
+
+    .ping-show-button {
+        color: #000000;
+        z-index: 100;
+        position: fixed;
+        bottom: 0;
+        right: 10px;
+        padding: 1em 3em;
+        background-color: #ffffff;
+        border: 1px solid #868686;
+        border-top-left-radius: .5em;
+        border-top-right-radius: .5em;
+        font-size: 12px;
+        text-align: center;
+        text-decoration: none;
+        cursor: pointer;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+<a class="ping-show-button" href="https://join.slack.com/t/jserinfo/shared_invite/zt-g2shzp7o-f_tj6OaphCAFw5Qlt2Jw0A" ga-on="click" ga-event-category="Slack" ga-event-action="click"><img src="index_files/slack.svg" alt="" width="28" height="28"><span>JSer.info Slackに参加する</span></a>
+
+
+
+<iframe scrolling="no" allowtransparency="true" src="index_files/widget_iframe.html" title="Twitter settings iframe" style="display: none;" class="notranslate" frameborder="0"></iframe><iframe id="rufous-sandbox" scrolling="no" allowtransparency="true" allowfullscreen="true" style="position: absolute; visibility: hidden; display: none; width: 0px; height: 0px; padding: 0px; border: medium none;" title="Twitter analytics iframe" class="notranslate" frameborder="0"></iframe></body><div style="display: block; opacity: 1; color-scheme: light;"></div></html>

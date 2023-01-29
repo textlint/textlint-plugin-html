@@ -2,12 +2,15 @@
 
 Add HTML support for [textlint](https://github.com/textlint/textlint "textlint").
 
-What is textlint plugin? Please see https://github.com/textlint/textlint/blob/master/docs/plugin.md
-
+What is textlint plugin? Please see <https://github.com/textlint/textlint/blob/master/docs/plugin.md>
 
 ## Installation
 
     npm install textlint-plugin-html
+
+Requirements:
+
+- textlint v13+
 
 ## Default supported extensions
 

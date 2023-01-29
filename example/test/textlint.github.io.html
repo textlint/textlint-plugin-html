@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><title translate="no">textlint v13.0.0 · textlint</title><meta name="viewport" content="width=device-width, initial-scale=1.0"><meta name="generator" content="Docusaurus"><meta name="description" content="We just publish textlint v13.0.0, which is a major release upgrade of textlint."><meta name="docsearch:language" content="en"><meta property="og:title" content="textlint v13.0.0 · textlint"><meta property="og:type" content="website"><meta property="og:url" content="https://textlint.github.io/blog/2023/01/27/textlint-13.html"><meta property="og:description" content="We just publish textlint v13.0.0, which is a major release upgrade of textlint."><meta property="og:image" content="https://textlint.github.io/img/textlint-icon_256x256.png"><meta name="twitter:card" content="summary"><meta name="twitter:image" content="https://textlint.github.io/img/textlint-icon_256x256.png"><link rel="shortcut icon" href="textlint.github.io_files/textlint-icon_256x256.png"><link rel="stylesheet" href="textlint.github.io_files/docsearch.min.css"><link rel="stylesheet" href="textlint.github.io_files/default.min.css"><link rel="alternate" type="application/atom+xml" href="https://textlint.github.io/blog/atom.xml" title="textlint Blog ATOM Feed"><link rel="alternate" type="application/rss+xml" href="https://textlint.github.io/blog/feed.xml" title="textlint Blog RSS Feed"><script type="text/javascript" src="textlint.github.io_files/buttons.js"></script><script src="textlint.github.io_files/scrollSpy.js"></script><link rel="stylesheet" href="textlint.github.io_files/main.css"><script src="textlint.github.io_files/codetabs.js"></script></head><div style="display: block; opacity: 1; color-scheme: light;"></div><body class="sideNavVisible separateOnPageNav vsc-initialized"><div class="fixedHeaderContainer"><div class="headerWrapper wrapper"><header><a href="https://textlint.github.io/"><img class="logo" src="textlint.github.io_files/textlint-icon_256x256.png" alt="textlint"><h2 class="headerTitleWithLogo">textlint</h2></a><div class="navigationWrapper navigationSlider"><nav class="slidingNav"><ul class="nav-site nav-site-internal"><li class=""><a href="https://textlint.github.io/docs/getting-started.html" target="_self">Docs</a></li><li class=""><a href="https://github.com/textlint/textlint/wiki/Collection-of-textlint-rule" target="_self">Rules</a></li><li class="siteNavGroupActive"><a href="https://textlint.github.io/blog/" target="_self">Blog</a></li><li class=""><a href="https://textlint.github.io/help.html" target="_self">Help</a></li><li class=""><a href="https://github.com/textlint/textlint" target="_self">GitHub</a></li><li class="navSearchWrapper reactNavSearchWrapper"><span class="algolia-autocomplete" style="position: relative; display: inline-block; direction: ltr;"><input type="text" id="search_input_react" placeholder="Search" title="Search" class="aa-input" autocomplete="off" spellcheck="false" role="combobox" aria-autocomplete="list" aria-expanded="false" aria-labelledby="search_input_react" aria-owns="algolia-autocomplete-listbox-0" style="position: relative; vertical-align: top;" dir="auto" data-ddg-inputtype="unknown"><pre aria-hidden="true" style="position: absolute; visibility: hidden; white-space: pre; font-family: -apple-system; font-size: 14px; font-style: normal; font-variant: normal; font-weight: 300; word-spacing: 0px; letter-spacing: normal; text-indent: 0px; text-rendering: optimizelegibility; text-transform: none;"></pre><span class="aa-dropdown-menu" style="position: absolute; top: 100%; z-index: 100; display: none; left: 0px; right: auto;" role="listbox" id="algolia-autocomplete-listbox-0"><div class="aa-dataset-1"></div></span></span></li></ul></nav></div></header></div></div><div class="navPusher"><div class="docMainWrapper wrapper"><div class="docsNavContainer" id="docsNav"><nav class="toc"><div class="toggleNav"><section class="navWrapper wrapper"><div class="navBreadcrumb wrapper"><div class="navToggle" id="navToggler"><div class="hamburger-menu"><div class="line1"></div><div class="line2"></div><div class="line3"></div></div></div><h2><i>›</i><span>Recent Posts</span></h2><div class="tocToggler" id="tocToggler"><i class="icon-toc"></i></div></div><div class="navGroups"><div class="navGroup"><h3 class="navGroupCategoryTitle">Recent Posts</h3><ul class=""><li class="navListItem navListItemActive"><a class="navItem" href="https://textlint.github.io/blog/2023/01/27/textlint-13.html">textlint v13.0.0</a></li><li class="navListItem"><a class="navItem" href="https://textlint.github.io/blog/2021/05/24/textlint-12.html">textlint v12.0.0</a></li><li class="navListItem"><a class="navItem" href="https://textlint.github.io/blog/2018/07/22/textlint-11.html">textlint 11 released</a></li><li class="navListItem"><a class="navItem" href="https://textlint.github.io/blog/2018/05/22/new-website.html">New website</a></li><li class="navListItem"><a class="navItem" href="https://textlint.github.io/blog/2018/01/13/renewing-1.0.0.html">Renewing</a></li></ul></div></div></section></div><script>
+            var coll = document.getElementsByClassName('collapsible');
+            var checkActiveCategory = true;
+            for (var i = 0; i < coll.length; i++) {
+              var links = coll[i].nextElementSibling.getElementsByTagName('*');
+              if (checkActiveCategory){
+                for (var j = 0; j < links.length; j++) {
+                  if (links[j].classList.contains('navListItemActive')){
+                    coll[i].nextElementSibling.classList.toggle('hide');
+                    coll[i].childNodes[1].classList.toggle('rotate');
+                    checkActiveCategory = false;
+                    break;
+                  }
+                }
+              }
+
+              coll[i].addEventListener('click', function() {
+                var arrow = this.childNodes[1];
+                arrow.classList.toggle('rotate');
+                var content = this.nextElementSibling;
+                content.classList.toggle('hide');
+              });
+            }
+
+            document.addEventListener('DOMContentLoaded', function() {
+              createToggler('#navToggler', '#docsNav', 'docsSliderActive');
+              createToggler('#tocToggler', 'body', 'tocActive');
+
+              var headings = document.querySelector('.toc-headings');
+              headings && headings.addEventListener('click', function(event) {
+                var el = event.target;
+                while(el !== headings){
+                  if (el.tagName === 'A') {
+                    document.body.classList.remove('tocActive');
+                    break;
+                  } else{
+                    el = el.parentNode;
+                  }
+                }
+              }, false);
+
+              function createToggler(togglerSelector, targetSelector, className) {
+                var toggler = document.querySelector(togglerSelector);
+                var target = document.querySelector(targetSelector);
+
+                if (!toggler) {
+                  return;
+                }
+
+                toggler.onclick = function(event) {
+                  event.preventDefault();
+
+                  target.classList.toggle(className);
+                };
+              }
+            });
+        </script></nav></div><div class="container mainContainer postContainer blogContainer"><div class="wrapper"><div class="lonePost"><div class="post"><header class="postHeader"><h1 class="postHeaderTitle"><a href="https://textlint.github.io/blog/2023/01/27/textlint-13.html">textlint v13.0.0</a></h1><p class="post-meta">January 27, 2023</p><div class="authorBlock"><p class="post-authorName"><a href="http://github.com/azu" target="_blank" rel="noreferrer noopener">azu</a></p></div></header><div><span><p>We just publish textlint v13.0.0, which is a major release upgrade of textlint.</p>
+<p>textlint v13 support ESM rules/plugins native.</p>
+<p>We have rewritten CLI and <code>textlint</code> package.
+However, it is not a breaking change for most <code>textlint</code> CLI users.
+Almost CLI behaviors are the same as textlint v12.</p>
+<h2><a class="anchor" aria-hidden="true" id="summary"></a><a href="#summary" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Summary</h2>
+<p><strong>For textlint user</strong></p>
+<p>You can upgrade textlint via following commands:</p>
+<pre><code class="hljs notranslate">npm install textlint@13 --save-dev
+# or
+yarn install textlint@13 --dev
+</code></pre>
+<p>textlint 13.0.0 requires Node.js 16+.
+If you use Node.js 14, you need to upgrade Node.js to 16+.</p>
+<ul>
+<li><a href="https://nodejs.org/en/download/">Download | Node.js</a></li>
+</ul>
+<p><strong>For textlint rule creator</strong></p>
+<p>You can write own rule as ESM module.</p>
+<p><code>textlint</code> v13.0.0 can load ESM rules native. So you need to transpile your rule to CommonJS.</p>
+<p><code>textlint</code> CLI load ESM rules and lint files!</p>
+<p>:warning: However, textlint editor plugin may not support ESM rules yet.
+You need to wait for editor plugin author migrate to textlint new APIs.</p>
+<p><strong>For textlint module user</strong></p>
+<p>If you use <code>textlint</code> as node module, you should use new APIs.</p>
+<p><code>textlint</code> package provides new APIs from <a href="https://github.com/textlint/textlint/releases/tag/v12.3.0">v12.3.0</a></p>
+<p>We have introduced new API like <code>createLinter</code> for supporting Async APIs.
+v13 continue to support current <code>TextlintCore</code>, <code>TextLintEngine</code> and <code>TextFixEngine</code> for backward compatible.
+However, These API will be retired in the future.</p>
+<p>New <code>createLinter</code> and <code>loadTextlintrc</code> supports ESM rules/plugins.
+<code>textlint</code> modules user should use these instead of <code>TextlintCore</code>, <code>TextLintEngine</code> and <code>TextFixEngine</code>.</p>
+<p>ℹ️ Timeline:</p>
+<ul>
+<li>textlint v12.3.0 support old APIs(deprecated) and new APIs
+<ul>
+<li>use old APIs as default</li>
+</ul></li>
+<li>textlint v13.0.0 support old APIs(deprecated) and new APIs
+<ul>
+<li>use new APIs as default - CURRENT</li>
+</ul></li>
+<li>textlint v14.0.0 drop to support old APIs</li>
+</ul>
+<table>
+<thead>
+<tr><th>API</th><th>Description</th><th>Behavior</th><th>Target Platform</th><th>v13+</th></tr>
+</thead>
+<tbody>
+<tr><td>cli</td><td>Command LIne Interface</td><td>Async</td><td>Node.js</td><td>✅ (Use <code>createLinter</code> and <code>loadTextlintrc</code> internally)</td></tr>
+<tr><td>textlint</td><td>TextLintCore alias</td><td>Async</td><td>Node.js/CommonJS</td><td>❌ Deprecated</td></tr>
+<tr><td>TextLintCore</td><td>Old API. It is Procedural API. Lint Only Single File. Recommended to use @texltint/kernel module instead of It.</td><td>Async</td><td>Node.js/CommonJS</td><td>❌ Deprecated</td></tr>
+<tr><td>TextLintEngine</td><td>Lint Engine API. It load .textlintrc automaticaly</td><td>◉ Loading is Sync <br>◉ Linting is Async</td><td>Node.js/CommonJS</td><td>❌ Deprecated</td></tr>
+<tr><td>TextFixEngine</td><td>Fix Engine API. It load .textlintrc automaticaly</td><td>◉ Loading is Sync <br>◉ Fixing is Async</td><td>Node.js/CommonJS</td><td>❌ Deprecated</td></tr>
+<tr><td>createLinter/loadTextlintrc</td><td>Support Async APIs.</td><td>◉ Loading is Async<br>◉ Linting/Fixing is Async</td><td>Node.js/CommonJS and ESM</td><td>✅ Recommended</td></tr>
+</tbody>
+</table>
+<h2><a class="anchor" aria-hidden="true" id="new-apis"></a><a href="#new-apis" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>New APIs</h2>
+<p>textlint v12.3.0 introduce new APIs.
+textlint will drop support old APIs(<code>textlint</code>, <code>TextLintEngine</code>, <code>TextFixEngine</code>, and <code>TextLintCore</code>) in the future.</p>
+<p>📝 Old APIs can not support ECMAScript modules, new APIs support ECMAScript modules.</p>
+<ul>
+<li><code>createLinter</code>: create linter instance
+<ul>
+<li><code>lintFiles(files): Promise&lt;TextlintResult[]&gt;</code>: lint files and return linter messages</li>
+<li><code>lintText(text, filePath): Promise&lt;TextlintResult&gt;</code> lint text with virtual filePath and return linter messages</li>
+<li><code>fixFiles(files): Promise&lt;TextlintFixResult[]&gt;</code> lint text and return fixer messages</li>
+<li><code>fixText(text, filePath): Promise&lt;TextlintFixResult&gt;</code> lint text with virtual filePath and return fixer messages
+<ul>
+<li><code>fixFiles</code> and <code>fixText</code> does not modify files</li>
+</ul></li>
+</ul></li>
+<li><code>loadTextlintrc</code>: load <code>.textlintrc</code> config file and return a descriptor object</li>
+<li><code>loadLinerFormatter</code> and <code>loadFixerFormatter</code>: load formatter</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="examples"></a><a href="#examples" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Examples</h3>
+<p>Lint files and output to console.</p>
+<pre><code class="hljs css language-ts notranslate"><span class="hljs-keyword">import</span> { createLinter, loadTextlintrc, loadLinterFormatter } <span class="hljs-keyword">from</span> <span class="hljs-string">"textlint"</span>;
+<span class="hljs-comment">// descriptor is a structure object for linter</span>
+<span class="hljs-comment">// It includes rules, plugins, and options</span>
+<span class="hljs-keyword">const</span> descriptor = <span class="hljs-keyword">await</span> loadTextlintrc();
+<span class="hljs-keyword">const</span> linter = createLinter({
+    descriptor
+});
+<span class="hljs-keyword">const</span> results = <span class="hljs-keyword">await</span> linter.lintFiles([<span class="hljs-string">"*.md"</span>]);
+<span class="hljs-comment">// textlint has two types formatter sets for linter and fixer</span>
+<span class="hljs-keyword">const</span> formatter = <span class="hljs-keyword">await</span> loadLinterFormatter({ formatterName: <span class="hljs-string">"stylish"</span> })
+<span class="hljs-keyword">const</span> output = formatter.format(results);
+<span class="hljs-built_in">console</span>.log(output);
+</code></pre>
+<p>For more details, please read next document.</p>
+<ul>
+<li><a href="https://textlint.github.io/docs/use-as-modules.html">Use as Node Modules · textlint</a></li>
+</ul>
+<p>If you have any questions, please ask us via GitHub Discussion.</p>
+<ul>
+<li><a href="https://github.com/textlint/textlint/discussions/968">Feedback for new APIs · Discussion #968 · textlint/textlint</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="changelog"></a><a href="#changelog" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>ChangeLog</h2>
+<h3><a class="anchor" aria-hidden="true" id="-breaking-changes"></a><a href="#-breaking-changes" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🔥 Breaking Changes</h3>
+<ul>
+<li>Require Node.js 16+</li>
+<li><code>textlint --init</code> output <code>.textlintrc.json</code>
+<ul>
+<li>Previously, <code>textlint --init</code> output <code>.textlintrc</code></li>
+</ul></li>
+<li>Improve <code>@textlint/ast-node-types</code> types
+<ul>
+<li>Now, All node types are defined!</li>
+<li>It changes the existing node type and it is a breaking change</li>
+<li>If you want to know TxtAST, please read <a href="https://textlint.github.io/docs/txtnode.html">TxtAST Interface</a></li>
+</ul></li>
+<li>Use New-CLI instead of Old-CLI
+<ul>
+<li>textlint has introduced New-CLI and New-APIs in <a href="https://github.com/textlint/textlint/releases/tag/v12.3.0">v12.3.0</a></li>
+<li>New-CLI uses new APIs: <code>createLinter</code>/<code>loadTextlintrc</code>/<code>loadLinterFormatter</code>/<code>loadFixerFormatter</code>( If you want to know new APIs, please read <a href="https://textlint.github.io/docs/use-as-modules.html">Use as Node Modules</a>)</li>
+<li>It means that textlint support rules/plugins that are written by ESM 🎉</li>
+<li>Remove Old-CLI</li>
+</ul></li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="difference-between-old-cli-and-new-cli"></a><a href="#difference-between-old-cli-and-new-cli" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Difference between Old-CLI and New-CLI</h4>
+<ul>
+<li>New CLI support ESM rules/plugins</li>
+<li>New CLI must require <code>--stdin-filename</code> with  <code>--stdin</code>
+<ul>
+<li><code>--stdin-filename</code> may be optional in Old-CLI</li>
+</ul></li>
+<li>Correct exit status</li>
+</ul>
+<h4><a class="anchor" aria-hidden="true" id="exit-status-on-new-cli"></a><a href="#exit-status-on-new-cli" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Exit Status on new CLI</h4>
+<p><code>0</code>: No Error</p>
+<ul>
+<li>Not found lint error</li>
+<li>--fix: found errors but fix all errors, so exit with 0</li>
+<li>--output-file: Found lint error but --output-file is specified</li>
+<li>--dryRun: Found lint error but --dryRun is specified</li>
+</ul>
+<p><code>1</code>: Lint Error</p>
+<ul>
+<li>found lint error</li>
+<li>--fix: found errors and could not fix all errors, so exit with 1</li>
+</ul>
+<p><code>2</code>: Fatal Error</p>
+<ul>
+<li>Crash textlint process</li>
+<li>Fail to load config/rule/plugin etc...</li>
+</ul>
+<h3><a class="anchor" aria-hidden="true" id="-features"></a><a href="#-features" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>🆕 Features</h3>
+<h4><a class="anchor" aria-hidden="true" id="add-individual-node-type-and-add-tabletablerowtablecell-node-1008"></a><a href="#add-individual-node-type-and-add-tabletablerowtablecell-node-1008" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Add individual Node type and Add Table/TableRow/TableCell node #1008</h4>
+<ul>
+<li>Define all node types in <code>@textlint/ast-node-types</code></li>
+<li>Add Table/TableRow/TableCell node to <code>@textlint/ast-node-types</code></li>
+</ul>
+<p>These types are defined in <a href="https://github.com/textlint/textlint/tree/master/packages/%40textlint/ast-node-types"><code>@textlint/ast-node-types</code></a>.</p>
+<table>
+<thead>
+<tr><th>Type name</th><th>Node type</th><th>Description</th></tr>
+</thead>
+<tbody>
+<tr><td>ASTNodeTypes.Document</td><td>TxtDocumentNode(TxtParentNode)</td><td>Root Node</td></tr>
+<tr><td>ASTNodeTypes.DocumentExit</td><td>TxtDocumentNode(TxtParentNode)</td><td></td></tr>
+<tr><td>ASTNodeTypes.Paragraph</td><td>TxtParagraphNode(TxtParentNode)</td><td>Paragraph Node</td></tr>
+<tr><td>ASTNodeTypes.ParagraphExit</td><td>TxtParagraphNode(TxtParentNode)</td><td></td></tr>
+<tr><td>ASTNodeTypes.BlockQuote</td><td>TxtBlockQuoteNode(TxtParentNode)</td><td>&gt; Block Quote Node</td></tr>
+<tr><td>ASTNodeTypes.BlockQuoteExit</td><td>TxtBlockQuoteNode(TxtParentNode)</td><td></td></tr>
+<tr><td>ASTNodeTypes.List</td><td>TxtListNode(TxtParentNode)</td><td>List Node</td></tr>
+<tr><td>ASTNodeTypes.ListExit</td><td>TxtListNode(TxtParentNode)</td><td></td></tr>
+<tr><td>ASTNodeTypes.ListItem</td><td>TxtListItemNode(TxtParentNode)</td><td>List (each) item Node</td></tr>
+<tr><td>ASTNodeTypes.ListItemExit</td><td>TxtListItemNode(TxtParentNode)</td><td></td></tr>
+<tr><td>ASTNodeTypes.Header</td><td>TxtHeaderNode(TxtParentNode)</td><td># Header Node</td></tr>
+<tr><td>ASTNodeTypes.HeaderExit</td><td>TxtHeaderNode(TxtParentNode)</td><td></td></tr>
+<tr><td>ASTNodeTypes.CodeBlock</td><td>TxtCodeBlockNode(TxtParentNode)</td><td>Code Block Node</td></tr>
+<tr><td>ASTNodeTypes.CodeBlockExit</td><td>TxtCodeBlockNode(TxtParentNode)</td><td></td></tr>
+<tr><td>ASTNodeTypes.HtmlBlock</td><td>TxtHtmlBlockNode(TxtParentNode)</td><td>HTML Block Node</td></tr>
+<tr><td>ASTNodeTypes.HtmlBlockExit</td><td>TxtHtmlBlockNode(TxtParentNode)</td><td></td></tr>
+<tr><td>ASTNodeTypes.Link</td><td>TxtLinkNode(TxtParentNode)</td><td>Link Node</td></tr>
+<tr><td>ASTNodeTypes.LinkExit</td><td>TxtLinkNode(TxtParentNode)</td><td></td></tr>
+<tr><td>ASTNodeTypes.Delete</td><td>TxtDeleteNode(TxtParentNode)</td><td>Delete Node(<code>~Str~</code>)</td></tr>
+<tr><td>ASTNodeTypes.DeleteExit</td><td>TxtDeleteNode(TxtParentNode)</td><td></td></tr>
+<tr><td>ASTNodeTypes.Emphasis</td><td>TxtEmphasisNode(TxtParentNode)</td><td>Emphasis(<code>*Str*</code>)</td></tr>
+<tr><td>ASTNodeTypes.EmphasisExit</td><td>TxtEmphasisNode(TxtParentNode)</td><td></td></tr>
+<tr><td>ASTNodeTypes.Strong</td><td>TxtStrongNode(TxtParentNode)</td><td>Strong Node(<code>**Str**</code>)</td></tr>
+<tr><td>ASTNodeTypes.StrongExit</td><td>TxtStrongNode(TxtParentNode)</td><td></td></tr>
+<tr><td>ASTNodeTypes.Break</td><td>TxtBreakNode</td><td>Hard Break Node(<code>Str&lt;space&gt;&lt;space&gt;</code>)</td></tr>
+<tr><td>ASTNodeTypes.BreakExit</td><td>TxtBreakNode</td><td></td></tr>
+<tr><td>ASTNodeTypes.Image</td><td>TxtImageNode</td><td>Image Node</td></tr>
+<tr><td>ASTNodeTypes.ImageExit</td><td>TxtImageNode</td><td></td></tr>
+<tr><td>ASTNodeTypes.HorizontalRule</td><td>TxtHorizontalRuleNode</td><td>Horizontal Node(<code>---</code>)</td></tr>
+<tr><td>ASTNodeTypes.HorizontalRuleExit</td><td>TxtHorizontalRuleNode</td><td></td></tr>
+<tr><td>ASTNodeTypes.Comment</td><td>TxtCommentNode</td><td>Comment Node</td></tr>
+<tr><td>ASTNodeTypes.CommentExit</td><td>TxtCommentNode</td><td></td></tr>
+<tr><td>ASTNodeTypes.Str</td><td>TxtStrNode</td><td>Str Node</td></tr>
+<tr><td>ASTNodeTypes.StrExit</td><td>TxtStrNode</td><td></td></tr>
+<tr><td>ASTNodeTypes.Code</td><td>TxtCodeNode</td><td>Inline Code Node</td></tr>
+<tr><td>ASTNodeTypes.CodeExit</td><td>TxtCodeNode</td><td></td></tr>
+<tr><td>ASTNodeTypes.Html</td><td>TxtHtmlNode</td><td>Inline HTML Node</td></tr>
+<tr><td>ASTNodeTypes.HtmlExit</td><td>TxtHtmlNode</td><td></td></tr>
+<tr><td>ASTNodeTypes.Table</td><td>TxtTableNode</td><td>Table node. textlint 13+</td></tr>
+<tr><td>ASTNodeTypes.TableExit</td><td>TxtTableNode</td><td></td></tr>
+<tr><td>ASTNodeTypes.TableRow</td><td>TxtTableRowNode</td><td>Table row node. textlint 13+</td></tr>
+<tr><td>ASTNodeTypes.TableRowExit</td><td>TxtTableRowNode</td><td></td></tr>
+<tr><td>ASTNodeTypes.TableCell</td><td>TxtTableCellNode</td><td>Table cell node. textlint 13+</td></tr>
+<tr><td>ASTNodeTypes.TableCellExit</td><td>TxtTableCellNode</td><td></td></tr>
+</tbody>
+</table>
+<p>Some nodes have additional properties.
+For example, <code>TxtHeaderNode</code> has <code>level</code> property.</p>
+<pre><code class="hljs css language-ts notranslate"><span class="hljs-keyword">export</span> <span class="hljs-keyword">interface</span> TxtHeaderNode <span class="hljs-keyword">extends</span> TxtParentNode {
+    <span class="hljs-keyword">type</span>: <span class="hljs-string">"Header"</span>;
+    depth: <span class="hljs-number">1</span> | <span class="hljs-number">2</span> | <span class="hljs-number">3</span> | <span class="hljs-number">4</span> | <span class="hljs-number">5</span> | <span class="hljs-number">6</span>;
+    children: PhrasingContent[];
+}
+</code></pre>
+<p>For more details, see <a href="https://github.com/textlint/textlint/tree/master/packages/%40textlint/ast-node-types"><code>@textlint/ast-node-types</code></a>.</p>
+<ul>
+<li><a href="https://github.com/textlint/textlint/tree/master/packages/%40textlint/ast-node-types/src/NodeType.ts"><code>@textlint/ast-node-types/src/NodeType.ts</code></a>.</li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="full-changelog"></a><a href="#full-changelog" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Full Changelog</h2>
+<ul>
+<li><a href="https://github.com/textlint/textlint/releases/tag/v13.0.0">textlint v13.0.0 - textlint</a></li>
+</ul>
+<h2><a class="anchor" aria-hidden="true" id="thanks-for-support"></a><a href="#thanks-for-support" aria-hidden="true" class="hash-link"><svg class="hash-link-icon" aria-hidden="true" height="16" version="1.1" viewBox="0 0 16 16" width="16"><path fill-rule="evenodd" d="M4 9h1v1H4c-1.5 0-3-1.69-3-3.5S2.55 3 4 3h4c1.45 0 3 1.69 3 3.5 0 1.41-.91 2.72-2 3.25V8.59c.58-.45 1-1.27 1-2.09C10 5.22 8.98 4 8 4H4c-.98 0-2 1.22-2 2.5S3 9 4 9zm9-3h-1v1h1c1 0 2 1.22 2 2.5S13.98 12 13 12H9c-.98 0-2-1.22-2-2.5 0-.83.42-1.64 1-2.09V6.25c-1.09.53-2 1.84-2 3.25C6 11.31 7.55 13 9 13h4c1.45 0 3-1.69 3-3.5S14.5 6 13 6z"></path></svg></a>Thanks for Support!</h2>
+<p>Many people support us, Thanks!</p>
+<p>If you're interested in GitHub Sponsor, please check <a href="https://github.com/sponsors/azu">@azu on GitHub Sponsors</a>!</p>
+<iframe src="textlint.github.io_files/card.html" title="Sponsor azu" style="border: 0;" class="notranslate" width="600" height="225"></iframe>
+</span></div></div><div class="blogSocialSection"></div></div><div class="blog-recent"><a class="button" href="https://textlint.github.io/blog/">Recent Posts</a></div></div></div><nav class="onPageNav"><ul class="toc-headings"><li><a href="#summary" class="active">Summary</a></li><li><a href="#new-apis">New APIs</a><ul class="toc-headings"><li><a href="#examples">Examples</a></li></ul></li><li><a href="#changelog">ChangeLog</a><ul class="toc-headings"><li><a href="#-breaking-changes">🔥 Breaking Changes</a></li><li><a href="#-features">🆕 Features</a></li></ul></li><li><a href="#full-changelog">Full Changelog</a></li><li><a href="#thanks-for-support">Thanks for Support!</a></li></ul></nav></div><footer class="nav-footer" id="footer"><section class="sitemap"><a href="https://textlint.github.io/" class="nav-home"><img src="textlint.github.io_files/textlint-icon_256x256.png" alt="textlint" width="66" height="58"></a><div><h5>Docs</h5><a href="https://textlint.github.io/docs/en/configuring.html">User Manual</a><a href="https://textlint.github.io/docs/en/rule.html">Developer Guide</a></div><div><h5>Community</h5><a href="https://gitter.im/textlint-ja/textlint-ja">Project Chat</a></div><div><h5>More</h5><a href="https://textlint.github.io/blog">Blog</a><a href="https://github.com/textlint/textlint">GitHub</a><span></span></div></section><section class="copyright">Copyright © 2023 textlint organization</section></footer></div><script type="text/javascript" src="textlint.github.io_files/docsearch.min.js"></script><script>
+                document.addEventListener('keyup', function(e) {
+                  if (e.target !== document.body) {
+                    return;
+                  }
+                  // keyCode for '/' (slash)
+                  if (e.keyCode === 191) {
+                    const search = document.getElementById('search_input_react');
+                    search && search.focus();
+                  }
+                });
+              </script><script>
+              var search = docsearch({
+                
+                apiKey: '27ef1d5fc0d12142485f3784f7d3cb46',
+                indexName: 'textlint',
+                inputSelector: '#search_input_react',
+                algoliaOptions: {}
+              });
+            </script></body></html>
