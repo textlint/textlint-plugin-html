@@ -89,7 +89,10 @@ export function parse(html: string, options?: ParseOptions) {
                 // case: element => Html or ...
                 node.type = mapNodeType(node, this.parent);
             } else {
-                // node.type = "Html" as const;
+                // We can not use "Html" type because some rule ignore node under the "Html" node.
+                // So, We use "unknown" type instead of "Html".
+                // https://github.com/textlint-ja/textlint-rule-no-synonyms/issues/4
+                node.type = "unknown" as const;
             }
             // map `range`, `loc` and `raw` to node
             if (typeof node.position === "object") {
