@@ -21,7 +21,6 @@ describe("HTMLProcessor-test", function () {
         it("script should CodeBlock", function () {
             const result = parse(`<script> const a = 1; </script>`);
             const script = result.children[0];
-            console.log(script)
             script.children.forEach(code => {
                 assert.equal(code.type, "CodeBlock");
             });
@@ -36,7 +35,6 @@ describe("HTMLProcessor-test", function () {
         it("<p> should Paragraph", function () {
             const result = parse(`<p>test</p>`);
             const pTag = result.children[0];
-            console.log(result)
             assert.equal(pTag.type, "Paragraph");
         });
         it("<!-- comment --> should be Comment", function () {

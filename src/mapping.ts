@@ -14,7 +14,7 @@ export const tagNameToType = {
     "strong": "Strong",
     "a": "Link",
     "img": "Image"
-};
+} as const;
 
 export const nodeTypes = {
     "root": "Document",
@@ -39,4 +39,4 @@ export const nodeTypes = {
     'image': 'Image',
     'inlineCode': 'Code',
     'yaml': 'Yaml'
-};
+} as const;
