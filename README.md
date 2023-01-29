@@ -55,6 +55,16 @@ For example, if you want to treat `.custom-ext` as html, put following config to
 
     npm test
 
+## Development
+
+If you update snapshot, please run `npm run updateSnapshot`.
+
+### Add new test case
+
+1. add new fixture file to `test/ast-test-case/<test-case-name>/index.html`
+2. npm run updateSnapshot
+3. check outputs
+
 ## Contributing
 
 1. Fork it!
