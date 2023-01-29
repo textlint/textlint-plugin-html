@@ -48,7 +48,7 @@ describe("Snapshot testing", () => {
                 const actual = parse(actualContent, {
                     debug: true
                 });
-                const expectedFilePath = path.join(fixtureDir, "index.json");
+                const expectedFilePath = path.join(fixtureDir, "output.json");
                 const expectedOutputTreeFilePath = path.join(fixtureDir, "output-tree.txt");
                 // Usage: update snapshots
                 // UPDATE_SNAPSHOT=1 npm test
