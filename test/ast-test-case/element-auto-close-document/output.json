@@ -557,7 +557,8 @@
                                 61,
                                 89
                             ],
-                            "raw": "<ol>\n  <li>delta\n  <li>echo\n"
+                            "raw": "<ol>\n  <li>delta\n  <li>echo\n",
+                            "ordered": true
                         }
                     ],
                     "position": {

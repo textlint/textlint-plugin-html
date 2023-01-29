@@ -287,7 +287,8 @@
                                 0,
                                 55
                             ],
-                            "raw": "<ul>\n  <li>first item</li>\n  <li>second item</li>\n</ul>"
+                            "raw": "<ul>\n  <li>first item</li>\n  <li>second item</li>\n</ul>",
+                            "ordered": false
                         },
                         {
                             "type": "Str",
@@ -575,7 +576,8 @@
                                 56,
                                 115
                             ],
-                            "raw": "<ol>\n  <li># first item</li>\n  <li># second item</li>\n</ol>"
+                            "raw": "<ol>\n  <li># first item</li>\n  <li># second item</li>\n</ol>",
+                            "ordered": true
                         },
                         {
                             "type": "Str",

@@ -183,6 +183,12 @@ export function parse(html: string, options?: ParseOptions) {
             } else if (txtNode.type === "Header") {
                 const depth = Number(txtNode.tagName.slice(1)) as TxtHeaderNode["depth"];
                 if (depth > 0 && depth < 7) txtNode.depth = depth;
+            } else if (txtNode.type === "List") {
+                if (txtNode.tagName === "ul") {
+                    txtNode.ordered = false;
+                } else if (txtNode.tagName === "ol") {
+                    txtNode.ordered = true;
+                }
             }
         }
     });
