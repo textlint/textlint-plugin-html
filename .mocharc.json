@@ -4,5 +4,5 @@
   "spec": [
     "test/**/*.{js,ts}"
   ],
-  "timeout": 10000,
+  "timeout": 10000
 }
