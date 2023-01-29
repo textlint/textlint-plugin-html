@@ -5,7 +5,7 @@ import fs from "fs";
 import path from "path";
 import { test } from "@textlint/ast-tester";
 import glob from "glob";
-import { parse } from "../src/html-to-ast";
+import { parse } from "../src/html-to-ast.js";
 import { fileURLToPath } from "url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

@@ -1,9 +1,11 @@
 // LICENSE : MIT
 "use strict";
-import rehype from "rehype";
+import { unified } from 'unified'
+import rehypeParse from 'rehype-parse'
 import traverse from "traverse";
-import StructuredSource from "structured-source";
-import {nodeTypes, tagNameToType} from "./mapping";
+import { StructuredSource } from "structured-source";
+import { nodeTypes, tagNameToType } from "./mapping.js";
+
 /**
  * Remove undocumented properties on TxtNode from node
  * @param {TxtNode} node already has loc,range
@@ -18,6 +20,7 @@ function removeUnusedProperties(node) {
         }
     });
 }
+
 function mapNodeType(node, parent) {
     if (parent) {
         let parentNode = parent.parent.node;
@@ -39,8 +42,12 @@ function mapNodeType(node, parent) {
         return nodeTypes[node.type];
     }
 }
+
 export function parse(html) {
-    const ast = hast.parse(html);
+    const parseHtml = unified().use(rehypeParse, {
+        fragment: true // parse html as fragment
+    })
+    const ast = parseHtml.parse(html);
     const src = new StructuredSource(html);
     const tr = traverse(ast);
     tr.forEach(function (node) {
@@ -56,8 +63,8 @@ export function parse(html) {
                 const position = src.rangeToLocation([0, html.length]);
                 // reverse adjust
                 node.position = {
-                    start: {line: position.start.line, column: position.start.column + 1},
-                    end: {line: position.end.line, column: position.end.column + 1}
+                    start: { line: position.start.line, column: position.start.column + 1 },
+                    end: { line: position.end.line, column: position.end.column + 1 }
                 };
             }
             // Unknown type
@@ -70,8 +77,8 @@ export function parse(html) {
                 // TxtNode's line start with 1
                 // TxtNode's column start with 0
                 let positionCompensated = {
-                    start: {line: position.start.line, column: position.start.column - 1},
-                    end: {line: position.end.line, column: position.end.column - 1}
+                    start: { line: position.start.line, column: position.start.column - 1 },
+                    end: { line: position.end.line, column: position.end.column - 1 }
                 };
                 let range = src.locationToRange(positionCompensated);
                 node.loc = positionCompensated;

@@ -1,6 +1,6 @@
 // LICENSE : MIT
 "use strict";
-import {parse} from "./html-to-ast";
+import {parse} from "./html-to-ast.js";
 export default class HTMLProcessor {
     constructor(config) {
         this.config = config;
