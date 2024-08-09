@@ -49,9 +49,9 @@
   },
   "dependencies": {
     "@textlint/ast-node-types": "^13.0.5",
+    "neotraverse": "^0.6.15",
     "rehype-parse": "^8.0.4",
     "structured-source": "^4.0.0",
-    "traverse": "^0.6.7",
     "unified": "^10.1.2"
   },
   "devDependencies": {
@@ -62,7 +62,6 @@
     "@types/glob": "^8.0.1",
     "@types/mocha": "^10.0.1",
     "@types/node": "^18.11.18",
-    "@types/traverse": "^0.6.32",
     "glob": "^8.1.0",
     "mocha": "^10.2.0",
     "textlint": "^13.0.5",
