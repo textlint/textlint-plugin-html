@@ -25,7 +25,7 @@ import type {
 } from "@textlint/ast-node-types";
 import { unified } from 'unified'
 import rehypeParse from 'rehype-parse'
-import traverse, { TraverseContext } from "traverse";
+import traverse, { TraverseContext } from "neotraverse";
 import { StructuredSource } from "structured-source";
 import type { Element, RootContent } from "hast";
 import { nodeTypes, tagNameToType } from "./mapping.js";
@@ -179,4 +179,3 @@ export function parse(html: string, options?: ParseOptions) {
     });
     return ast as any as TxtParentNode;
 }
-
