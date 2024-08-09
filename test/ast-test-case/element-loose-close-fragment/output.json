@@ -74,15 +74,15 @@
                                     "column": 0
                                 },
                                 "end": {
-                                    "line": 7,
-                                    "column": 0
+                                    "line": 1,
+                                    "column": 19
                                 }
                             },
                             "range": [
                                 0,
-                                51
+                                19
                             ],
-                            "raw": "<body></div></body></html>\n\n\n</p>\n\n<div></p></div>\n"
+                            "raw": "<body></div></body>"
                         },
                         {
                             "type": "Str",
@@ -209,9 +209,9 @@
                             "offset": 0
                         },
                         "end": {
-                            "line": 7,
-                            "column": 1,
-                            "offset": 51
+                            "line": 1,
+                            "column": 20,
+                            "offset": 19
                         }
                     },
                     "loc": {
@@ -220,15 +220,15 @@
                             "column": 0
                         },
                         "end": {
-                            "line": 7,
-                            "column": 0
+                            "line": 1,
+                            "column": 19
                         }
                     },
                     "range": [
                         0,
-                        51
+                        19
                     ],
-                    "raw": "<body></div></body></html>\n\n\n</p>\n\n<div></p></div>\n"
+                    "raw": "<body></div></body>"
                 }
             ],
             "loc": {

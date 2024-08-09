@@ -539,9 +539,9 @@
                             "offset": 39
                         },
                         "end": {
-                            "line": 8,
-                            "column": 1,
-                            "offset": 148
+                            "line": 6,
+                            "column": 8,
+                            "offset": 139
                         }
                     },
                     "loc": {
@@ -550,15 +550,15 @@
                             "column": 0
                         },
                         "end": {
-                            "line": 8,
-                            "column": 0
+                            "line": 6,
+                            "column": 7
                         }
                     },
                     "range": [
                         39,
-                        148
+                        139
                     ],
-                    "raw": "<body>\n<p><span>こんにちは、世界。</span></p>\n<p><span><span>こんにちは、</span><span>世界。</span></span></p>\n</body>\n</html>\n"
+                    "raw": "<body>\n<p><span>こんにちは、世界。</span></p>\n<p><span><span>こんにちは、</span><span>世界。</span></span></p>\n</body>"
                 }
             ],
             "position": {
@@ -568,9 +568,9 @@
                     "offset": 0
                 },
                 "end": {
-                    "line": 8,
-                    "column": 1,
-                    "offset": 148
+                    "line": 7,
+                    "column": 8,
+                    "offset": 147
                 }
             },
             "loc": {
@@ -579,15 +579,15 @@
                     "column": 0
                 },
                 "end": {
-                    "line": 8,
-                    "column": 0
+                    "line": 7,
+                    "column": 7
                 }
             },
             "range": [
                 0,
-                148
+                147
             ],
-            "raw": "<html>\n<head><title>テスト</title></head>\n<body>\n<p><span>こんにちは、世界。</span></p>\n<p><span><span>こんにちは、</span><span>世界。</span></span></p>\n</body>\n</html>\n"
+            "raw": "<html>\n<head><title>テスト</title></head>\n<body>\n<p><span>こんにちは、世界。</span></p>\n<p><span><span>こんにちは、</span><span>世界。</span></span></p>\n</body>\n</html>"
         }
     ],
     "data": {

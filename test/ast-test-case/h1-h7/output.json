@@ -922,9 +922,9 @@
                             "offset": 100
                         },
                         "end": {
-                            "line": 16,
-                            "column": 1,
-                            "offset": 195
+                            "line": 14,
+                            "column": 8,
+                            "offset": 186
                         }
                     },
                     "loc": {
@@ -933,15 +933,15 @@
                             "column": 0
                         },
                         "end": {
-                            "line": 16,
-                            "column": 0
+                            "line": 14,
+                            "column": 7
                         }
                     },
                     "range": [
                         100,
-                        195
+                        186
                     ],
-                    "raw": "<body>\n<h1>h1</h1>\n<h2>h2</h2>\n<h3>h3</h3>\n<h4>h4</h4>\n<h5>h5</h5>\n<h6>h6</h6>\n</body>\n</html>\n"
+                    "raw": "<body>\n<h1>h1</h1>\n<h2>h2</h2>\n<h3>h3</h3>\n<h4>h4</h4>\n<h5>h5</h5>\n<h6>h6</h6>\n</body>"
                 }
             ],
             "position": {
@@ -951,9 +951,9 @@
                     "offset": 16
                 },
                 "end": {
-                    "line": 16,
-                    "column": 1,
-                    "offset": 195
+                    "line": 15,
+                    "column": 8,
+                    "offset": 194
                 }
             },
             "loc": {
@@ -962,15 +962,15 @@
                     "column": 0
                 },
                 "end": {
-                    "line": 16,
-                    "column": 0
+                    "line": 15,
+                    "column": 7
                 }
             },
             "range": [
                 16,
-                195
+                194
             ],
-            "raw": "<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Title</title>\n</head>\n<body>\n<h1>h1</h1>\n<h2>h2</h2>\n<h3>h3</h3>\n<h4>h4</h4>\n<h5>h5</h5>\n<h6>h6</h6>\n</body>\n</html>\n"
+            "raw": "<html lang=\"en\">\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Title</title>\n</head>\n<body>\n<h1>h1</h1>\n<h2>h2</h2>\n<h3>h3</h3>\n<h4>h4</h4>\n<h5>h5</h5>\n<h6>h6</h6>\n</body>\n</html>"
         }
     ],
     "data": {
