@@ -113,8 +113,8 @@
                                 },
                                 "end": {
                                     "line": 1,
-                                    "column": 10,
-                                    "offset": 9
+                                    "column": 17,
+                                    "offset": 16
                                 }
                             },
                             "loc": {
@@ -124,14 +124,14 @@
                                 },
                                 "end": {
                                     "line": 1,
-                                    "column": 9
+                                    "column": 16
                                 }
                             },
                             "range": [
                                 0,
-                                9
+                                16
                             ],
-                            "raw": "<a><b><b>"
+                            "raw": "<a><b><b><p></a>"
                         },
                         {
                             "type": "b",
